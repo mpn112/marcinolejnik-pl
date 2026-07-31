@@ -27,7 +27,7 @@ const rotatingPhrases = [
   "znaleźć przyczynę niskiej produkcji",
   "zwiększyć autokonsumpcję",
   "dobrać magazyn energii",
-  "połączyć PV z automatyką domu",
+  "połączyć PV ze Smart Home",
   "sprawdzić instalację pomiarami",
 ];
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");

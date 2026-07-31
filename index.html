@@ -40,6 +40,20 @@
         <path d="m6 15 3-3 2.5 2 3.5-5 3 2" />
         <path d="m13.5 7.5-2 4h2.5l-1.5 3.5" />
       </symbol>
+      <symbol id="icon-solar-flow" viewBox="0 0 24 24">
+        <circle cx="12" cy="6.5" r="2.5" />
+        <path d="M12 1.5v1.2M12 10.3v1.2M7 6.5H5.8M18.2 6.5H17M8.5 3l.9.9M14.6 9.1l.9.9M15.5 3l-.9.9M9.4 9.1l-.9.9" />
+        <path d="M5 14h14l1.5 7h-17L5 14Z" />
+        <path d="M8 14.2 7.4 21M12 14.2V21M16 14.2l.6 6.8" />
+      </symbol>
+      <symbol id="icon-grid-flow" viewBox="0 0 24 24">
+        <path d="M12 2 7 21M12 2l5 19M8.2 8h7.6M6.7 14h10.6M4.5 21h15" />
+        <path d="m12.8 7-2.2 4h2.6l-2 4" />
+      </symbol>
+      <symbol id="icon-battery-flow" viewBox="0 0 24 24">
+        <rect x="5" y="4" width="14" height="17" rx="2" />
+        <path d="M9 1.5h6V4M12.5 7l-3 6h3l-2 5" />
+      </symbol>
       <symbol id="icon-device-links" viewBox="0 0 24 24">
         <rect x="2.5" y="3" width="6" height="5" rx="1" />
         <rect x="15.5" y="3" width="6" height="5" rx="1" />
@@ -100,7 +114,7 @@
           <span class="brand-mark" aria-hidden="true">MO</span>
           <span>
             <strong>Marcin Olejnik</strong>
-            <small>Energia • Pomiary • Automatyka</small>
+            <small>Energia • Pomiary • Smart Home</small>
           </span>
         </a>
 
@@ -111,7 +125,7 @@
 
         <nav id="main-nav" class="main-nav" aria-label="Główna nawigacja">
           <a href="#uslugi">Fotowoltaika i pomiary</a>
-          <a href="#automatyka">Automatyka</a>
+          <a href="#automatyka">Smart Home</a>
           <a href="#uslugi-it">Usługi IT</a>
           <a href="#kwalifikacje">Kwalifikacje</a>
           <a class="nav-phone" href="tel:+48605849102">605 849 102</a>
@@ -127,13 +141,13 @@
           <div class="hero-copy">
             <p class="eyebrow"><span></span> Rusiec • Mazowieckie</p>
             <h1 class="hero-title">
-              Masz już fotowoltaikę?
+              <span class="hero-question">Masz już fotowoltaikę?</span>
               <em>Sprawdźmy, czy naprawdę wykorzystujesz jej możliwości.</em>
             </h1>
             <p class="hero-lead">
               Diagnozuję słabą produkcję, analizuję pracę falownika i magazynu
-              energii, wykonuję pomiary oraz wdrażam automatykę zwiększającą
-              autokonsumpcję energii z fotowoltaiki.
+              energii, wykonuję pomiary oraz wdrażam Smart Home i automatykę
+              zwiększającą autokonsumpcję energii z fotowoltaiki.
             </p>
             <div class="hero-rotator" aria-label="Zakres pomocy">
               <span class="rotator-label">Mogę pomóc:</span>
@@ -143,7 +157,7 @@
               <span class="sr-only">
                 Mogę pomóc znaleźć przyczynę niskiej produkcji, zwiększyć
                 autokonsumpcję, dobrać magazyn energii, połączyć fotowoltaikę
-                z automatyką domu albo sprawdzić instalację pomiarami.
+                ze Smart Home albo sprawdzić instalację pomiarami.
               </span>
             </div>
             <div class="hero-actions">
@@ -159,31 +173,75 @@
             </ul>
           </div>
 
-          <div class="hero-panel" aria-label="Zakres głównych usług">
-            <div class="energy-visual" aria-hidden="true">
-              <div class="sun"></div>
-              <div class="panel-grid">
-                <span></span><span></span><span></span>
-                <span></span><span></span><span></span>
-              </div>
-              <div class="energy-line"></div>
-              <div class="battery">
-                <div class="battery-level"></div>
-                <b>78%</b>
-              </div>
-            </div>
-            <div class="status-row">
-              <span class="status-dot"></span>
+          <div class="hero-panel energy-dashboard" aria-label="Przykładowy dashboard monitoringu energii">
+            <div class="dashboard-head">
               <div>
-                <small>Częsty problem</small>
-                <strong>Spadek produkcji energii</strong>
+                <small>Home Assistant</small>
+                <strong>Przepływ mocy</strong>
+              </div>
+              <span class="dashboard-live"><i></i> podgląd na żywo</span>
+            </div>
+
+            <div
+              class="power-flow"
+              role="img"
+              aria-label="Przykładowy przepływ energii: panele produkują 2 kilowaty, dom zużywa 1,2 kilowata, magazyn ma 21 procent naładowania, a przepływ do sieci wynosi 12 watów."
+            >
+              <svg class="power-flow-lines" viewBox="0 0 400 240" preserveAspectRatio="none" aria-hidden="true">
+                <path class="flow-base" d="M200 54V120H78" />
+                <path class="flow-base" d="M200 54V120H322" />
+                <path class="flow-base" d="M200 54V194" />
+                <path class="flow-active flow-solar" d="M200 54V120H322" />
+                <path class="flow-active flow-grid" d="M78 120H200" />
+                <path class="flow-active flow-battery" d="M200 54V194" />
+                <circle class="flow-hub" cx="200" cy="120" r="5" />
+              </svg>
+
+              <div class="power-node power-node-solar" aria-hidden="true">
+                <span class="power-node-icon">
+                  <svg><use href="#icon-solar-flow"></use></svg>
+                </span>
+                <strong>2,0 kW</strong>
+                <small>Panele</small>
+              </div>
+              <div class="power-node power-node-grid" aria-hidden="true">
+                <span class="power-node-icon">
+                  <svg><use href="#icon-grid-flow"></use></svg>
+                </span>
+                <strong>12 W</strong>
+                <small>Sieć</small>
+              </div>
+              <div class="power-node power-node-home" aria-hidden="true">
+                <span class="power-node-icon">
+                  <svg><use href="#icon-home-system"></use></svg>
+                </span>
+                <strong>1,2 kW</strong>
+                <small>Dom</small>
+              </div>
+              <div class="power-node power-node-battery" aria-hidden="true">
+                <span class="power-node-icon">
+                  <svg><use href="#icon-battery-flow"></use></svg>
+                </span>
+                <strong>602 W</strong>
+                <small>Magazyn</small>
               </div>
             </div>
-            <div class="metric-grid">
-              <div><strong>PV</strong><span>diagnostyka</span></div>
-              <div><strong>G1</strong><span>E + D</span></div>
-              <div><strong>LOKALNIE</strong><span>Mazowsze</span></div>
+
+            <div class="dashboard-insights">
+              <div class="soc-card">
+                <div class="soc-ring"><span>21%</span></div>
+                <div>
+                  <small>Poziom baterii</small>
+                  <strong>Ładowanie</strong>
+                </div>
+              </div>
+              <div class="savings-card">
+                <small>Oszczędności dzisiaj</small>
+                <strong>29,18 zł</strong>
+                <span>Produkcja, zużycie i magazyn w jednym widoku</span>
+              </div>
             </div>
+            <p class="dashboard-note">Dane demonstracyjne • telefon • tablet • ekran ścienny</p>
           </div>
         </div>
       </section>
@@ -226,7 +284,7 @@
                 <li>analiza błędów i pracy falownika</li>
                 <li>weryfikacja spadków produkcji</li>
                 <li>sprawdzenie strony AC i DC</li>
-                <li>ocena monitoringu instalacji</li>
+                <li>monitoring pracy instalacji na telefonie i tablecie</li>
               </ul>
             </article>
 
@@ -267,14 +325,16 @@
       <section id="automatyka" class="section automation-section">
         <div class="container automation-grid">
           <div class="automation-copy">
-            <p class="eyebrow"><span></span> Automatyka i Home Assistant</p>
-            <h2>Automatyka dopasowana<br />do Twojego domu</h2>
+            <p class="eyebrow"><span></span> Smart Home i Home Assistant</p>
+            <h2>Smart Home dopasowany<br />do Twojego domu</h2>
             <p>
               Łączę instalację fotowoltaiczną, magazyn energii, ogrzewanie,
-              oświetlenie i urządzenia domowe w jeden czytelny system.
+              oświetlenie i urządzenia domowe w jeden czytelny system. Tworzę
+              monitoring produkcji, zużycia i magazynu energii dostępny na
+              telefonie, tablecie oraz ekranie ściennym.
             </p>
             <a class="button button-dark" href="tel:+48605849102">
-              Porozmawiajmy o automatyce <span aria-hidden="true">↗</span>
+              Porozmawiajmy o Smart Home <span aria-hidden="true">↗</span>
             </a>
           </div>
 
@@ -306,7 +366,7 @@
                 <svg class="automation-icon" aria-hidden="true">
                   <use href="#icon-energy-monitor"></use>
                 </svg>
-                <p>Monitoring energii, PV i magazynu</p>
+                <p>Monitoring pracy fotowoltaiki, energii i magazynu</p>
               </article>
               <article>
                 <span class="automation-number" aria-hidden="true">04</span>
@@ -327,7 +387,7 @@
                 <svg class="automation-icon" aria-hidden="true">
                   <use href="#icon-control-panels"></use>
                 </svg>
-                <p>Panele na telefonie i ekranach ściennych</p>
+                <p>Podgląd na telefonie, tablecie i ekranie ściennym</p>
               </article>
             </div>
           </div>
@@ -481,7 +541,7 @@
           <span class="brand-mark" aria-hidden="true">MO</span>
           <span>
             <strong>Marcin Olejnik</strong>
-            <small>Energia • Pomiary • Automatyka</small>
+            <small>Energia • Pomiary • Smart Home</small>
           </span>
         </div>
         <p>Rusiec, woj. mazowieckie</p>

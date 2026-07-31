@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Lokalne ustawienia i dane poufne
+.env
+.env.*
+!.env.example
+
+# Pliki tymczasowe i ewentualne artefakty narzędzi
+node_modules/
+dist/
+*.log

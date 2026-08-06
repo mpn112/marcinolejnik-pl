@@ -109,13 +109,27 @@
     <a class="skip-link" href="#main">Przejdź do treści</a>
 
     <header class="site-header" data-header>
+      <div class="header-code-rain" aria-hidden="true">
+        <span style="--x: 3%; --delay: -7s; --speed: 10s">0100110101</span>
+        <span style="--x: 12%; --delay: -2s; --speed: 8s">1011010010</span>
+        <span style="--x: 23%; --delay: -9s; --speed: 12s">0010110101</span>
+        <span style="--x: 34%; --delay: -4s; --speed: 9s">1100101100</span>
+        <span style="--x: 46%; --delay: -11s; --speed: 13s">0101101011</span>
+        <span style="--x: 57%; --delay: -5s; --speed: 11s">1010010110</span>
+        <span style="--x: 68%; --delay: -1s; --speed: 8.5s">0011011010</span>
+        <span style="--x: 78%; --delay: -8s; --speed: 12.5s">1101001011</span>
+        <span style="--x: 88%; --delay: -3s; --speed: 9.5s">0110100101</span>
+        <span style="--x: 97%; --delay: -10s; --speed: 11.5s">1001011010</span>
+      </div>
       <div class="container nav-wrap">
         <a class="brand" href="#start" aria-label="Marcin Olejnik — strona główna">
-          <span class="brand-mark" aria-hidden="true">MO</span>
-          <span>
-            <strong>Marcin Olejnik</strong>
-            <small>Energia • Pomiary • Smart Home</small>
-          </span>
+          <img
+            class="brand-logo"
+            src="assets/logo-marcin-olejnik.png"
+            alt="MarcinOlejnik.pl"
+            width="1522"
+            height="407"
+          />
         </a>
 
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">
@@ -137,6 +151,56 @@
       <section id="start" class="hero">
         <div class="hero-glow hero-glow-one"></div>
         <div class="hero-glow hero-glow-two"></div>
+        <svg
+          class="hero-ai-network"
+          viewBox="0 0 1440 820"
+          preserveAspectRatio="xMidYMid slice"
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern id="ai-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+              <path d="M44 0H0V44" fill="none" stroke="rgba(42, 211, 184, 0.16)" stroke-width="0.7" />
+            </pattern>
+            <linearGradient id="ai-line" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#18bcf2" />
+              <stop offset="0.54" stop-color="#38d9b4" />
+              <stop offset="1" stop-color="#b9f227" />
+            </linearGradient>
+            <radialGradient id="ai-node">
+              <stop offset="0" stop-color="#ffffff" />
+              <stop offset="0.28" stop-color="#b9f227" />
+              <stop offset="1" stop-color="#18bcf2" stop-opacity="0" />
+            </radialGradient>
+            <filter id="ai-glow" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="4" result="blur" />
+              <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+          </defs>
+
+          <rect class="hero-ai-grid" x="525" y="0" width="915" height="820" fill="url(#ai-grid)" />
+          <g class="hero-ai-lines" fill="none" stroke="url(#ai-line)" stroke-width="1.2">
+            <path id="ai-route-a" d="M460 670C610 540 610 310 790 240S1060 310 1240 150" />
+            <path id="ai-route-b" d="M560 80C700 190 760 415 940 430s245-135 430-40" />
+            <path id="ai-route-c" d="M720 760C790 630 920 610 1010 500s105-300 300-335" />
+            <path id="ai-route-d" d="M650 355C780 325 855 165 1015 190s200 180 390 115" />
+            <path d="M790 240 940 430 1010 500 1240 150" />
+            <path d="M650 355 940 430 1310 165" />
+          </g>
+
+          <g class="hero-ai-nodes" fill="url(#ai-node)" filter="url(#ai-glow)">
+            <circle cx="650" cy="355" r="8" /><circle cx="790" cy="240" r="9" />
+            <circle cx="940" cy="430" r="11" /><circle cx="1010" cy="500" r="7" />
+            <circle cx="1015" cy="190" r="7" /><circle cx="1240" cy="150" r="9" />
+            <circle cx="1310" cy="165" r="6" /><circle cx="1370" cy="390" r="8" />
+          </g>
+
+          <g class="hero-ai-pulses" fill="#dfff8e" filter="url(#ai-glow)">
+            <circle r="3.5"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#ai-route-a" /></animateMotion></circle>
+            <circle r="3"><animateMotion dur="8.5s" begin="-3s" repeatCount="indefinite"><mpath href="#ai-route-b" /></animateMotion></circle>
+            <circle r="3.5"><animateMotion dur="9.5s" begin="-6s" repeatCount="indefinite"><mpath href="#ai-route-c" /></animateMotion></circle>
+            <circle r="3"><animateMotion dur="6.5s" begin="-2s" repeatCount="indefinite"><mpath href="#ai-route-d" /></animateMotion></circle>
+          </g>
+        </svg>
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow"><span></span> Rusiec • Mazowieckie</p>
@@ -538,11 +602,14 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="brand footer-brand">
-          <span class="brand-mark" aria-hidden="true">MO</span>
-          <span>
-            <strong>Marcin Olejnik</strong>
-            <small>Energia • Pomiary • Smart Home</small>
-          </span>
+          <img
+            class="brand-logo"
+            src="assets/logo-marcin-olejnik.png"
+            alt="MarcinOlejnik.pl"
+            width="1522"
+            height="407"
+            loading="lazy"
+          />
         </div>
         <p>Rusiec, woj. mazowieckie</p>
         <a href="tel:+48605849102">605 849 102</a>

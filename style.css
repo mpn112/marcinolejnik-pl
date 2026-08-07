@@ -2838,6 +2838,193 @@ h1 em {
   font-weight: 700;
 }
 
+.footer-legal {
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+  margin-top: 18px;
+  padding-top: 17px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.footer-legal button {
+  padding: 0;
+  color: rgba(255, 255, 255, 0.44);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font: 600 10px/1.3 "Manrope", sans-serif;
+}
+
+.footer-legal button:hover {
+  color: var(--green);
+}
+
+.consent-banner[hidden] {
+  display: none;
+}
+
+.consent-banner {
+  position: fixed;
+  z-index: 200;
+  right: 22px;
+  bottom: 22px;
+  left: 22px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  width: min(calc(100% - 44px), 1050px);
+  margin-inline: auto;
+  padding: 22px;
+  color: #effaf5;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(185, 242, 39, 0.13), transparent 29%),
+    linear-gradient(145deg, rgba(7, 28, 22, 0.98), rgba(6, 21, 17, 0.98));
+  border: 1px solid rgba(37, 204, 242, 0.25);
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+}
+
+.consent-copy {
+  display: flex;
+  gap: 17px;
+  align-items: flex-start;
+}
+
+.consent-icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: #07150f;
+  background: var(--green);
+  border-radius: 12px;
+  font: 900 10px/1 "Manrope", sans-serif;
+  box-shadow: 0 0 24px rgba(185, 242, 39, 0.17);
+}
+
+.consent-copy h2 {
+  margin: 0;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+}
+
+.consent-copy p {
+  max-width: 610px;
+  margin: 7px 0 0;
+  color: rgba(235, 247, 241, 0.58);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.consent-policy-link {
+  margin-top: 8px;
+  padding: 0;
+  color: #2bcff3;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font: 700 10px/1.3 "Manrope", sans-serif;
+}
+
+.consent-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-left: 26px;
+}
+
+.consent-button {
+  min-height: 44px;
+  padding: 0 17px;
+  border-radius: 11px;
+  cursor: pointer;
+  font: 800 11px/1 "Manrope", sans-serif;
+}
+
+.consent-decline {
+  color: rgba(235, 247, 241, 0.72);
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.consent-accept {
+  color: #07150f;
+  background: var(--green);
+  border: 1px solid var(--green);
+}
+
+.privacy-dialog {
+  width: min(calc(100% - 32px), 670px);
+  max-height: min(82vh, 760px);
+  padding: 31px;
+  color: #eaf7f1;
+  background:
+    radial-gradient(circle at 90% 6%, rgba(37, 204, 242, 0.12), transparent 27%),
+    linear-gradient(145deg, #081e18, #061510);
+  border: 1px solid rgba(37, 204, 242, 0.23);
+  border-radius: 22px;
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.5);
+}
+
+.privacy-dialog::backdrop {
+  background: rgba(1, 8, 6, 0.72);
+  backdrop-filter: blur(5px);
+}
+
+.privacy-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  color: #eaf7f1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.privacy-kicker {
+  margin: 0 0 8px;
+  color: #2ccff3;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.privacy-dialog h2 {
+  margin: 0 42px 22px 0;
+  font-size: clamp(27px, 4vw, 40px);
+  letter-spacing: -0.04em;
+}
+
+.privacy-content {
+  overflow-y: auto;
+  color: rgba(235, 247, 241, 0.68);
+  font-size: 13px;
+  line-height: 1.68;
+}
+
+.privacy-content h3 {
+  margin: 23px 0 7px;
+  color: #eef9f4;
+  font-size: 16px;
+}
+
+.privacy-content a {
+  color: var(--green);
+}
+
+.privacy-content code {
+  color: #2cd0f3;
+}
+
 .mobile-call {
   display: none;
 }
@@ -3385,12 +3572,40 @@ h1 em {
     text-align: center;
   }
 
+  .site-footer {
+    padding-bottom: 112px;
+  }
+
   .footer-brand {
     justify-content: center;
   }
 
   .footer-grid p:last-child {
     display: block;
+  }
+
+  .footer-legal {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .consent-banner {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    grid-template-columns: 1fr;
+    width: calc(100% - 20px);
+    padding: 18px;
+  }
+
+  .consent-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 17px 0 0;
+  }
+
+  .privacy-dialog {
+    padding: 25px 20px;
   }
 
   .mobile-call {

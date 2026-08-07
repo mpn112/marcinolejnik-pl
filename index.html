@@ -17,7 +17,28 @@
     />
     <meta property="og:url" content="https://marcinolejnik.pl/" />
     <link rel="canonical" href="https://marcinolejnik.pl/" />
-    <link rel="stylesheet" href="style.css?v=20260807-2" />
+    <link rel="stylesheet" href="style.css?v=20260807-4" />
+    <script>
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+
+        if (l.hostname === "marcinolejnik.pl" || l.hostname === "www.marcinolejnik.pl") {
+          t = document.createElement(r);
+          t.async = 1;
+          t.src = "https://www.clarity.ms/tag/" + i;
+          y = document.getElementsByTagName(r)[0];
+          y.parentNode.insertBefore(t, y);
+        }
+
+        var storedConsent = null;
+        try { storedConsent = localStorage.getItem("mo-analytics-consent"); } catch (error) {}
+
+        c[a]("consentv2", {
+          ad_Storage: "denied",
+          analytics_Storage: storedConsent === "granted" ? "granted" : "denied"
+        });
+      })(window, location, "clarity", "script", "xylq0kqjkl");
+    </script>
     <title>Fotowoltaika i pomiary elektryczne — Marcin Olejnik, Rusiec</title>
   </head>
   <body>
@@ -940,12 +961,78 @@
         <a href="tel:+48605849102">605 849 102</a>
         <p>© <span data-year></span> Marcin Olejnik</p>
       </div>
+      <div class="container footer-legal">
+        <button type="button" data-open-privacy>Polityka prywatności</button>
+        <button type="button" data-consent-settings>Ustawienia analityki</button>
+      </div>
     </footer>
+
+    <section
+      class="consent-banner"
+      data-consent-banner
+      role="dialog"
+      aria-labelledby="consent-title"
+      aria-describedby="consent-description"
+      hidden
+    >
+      <div class="consent-copy">
+        <span class="consent-icon" aria-hidden="true">01</span>
+        <div>
+          <h2 id="consent-title">Czy zgadzasz się na analityczne pliki cookies?</h2>
+          <p id="consent-description">
+            Opcjonalne pliki cookies Microsoft Clarity pomagają mi zrozumieć, jak działa strona,
+            i ją ulepszać. Możesz je zaakceptować albo pozostać przy plikach niezbędnych.
+          </p>
+          <button type="button" class="consent-policy-link" data-open-privacy>
+            Szczegóły i polityka prywatności
+          </button>
+        </div>
+      </div>
+      <div class="consent-actions">
+        <button type="button" class="consent-button consent-decline" data-consent-decline>
+          Odrzuć opcjonalne
+        </button>
+        <button type="button" class="consent-button consent-accept" data-consent-accept>
+          Akceptuję
+        </button>
+      </div>
+    </section>
+
+    <dialog class="privacy-dialog" data-privacy-dialog aria-labelledby="privacy-title">
+      <button class="privacy-close" type="button" data-close-privacy aria-label="Zamknij">×</button>
+      <p class="privacy-kicker">Prywatność i analityka</p>
+      <h2 id="privacy-title">Informacja o prywatności</h2>
+      <div class="privacy-content">
+        <p>
+          Administratorem danych związanych z tą stroną jest Marcin Olejnik,
+          Rusiec, woj. mazowieckie. Kontakt: <a href="tel:+48605849102">605 849 102</a>.
+        </p>
+        <h3>Microsoft Clarity</h3>
+        <p>
+          Za Twoją zgodą serwis Microsoft Clarity pomaga mi analizować liczbę wizyt,
+          nagrania sposobu przewijania i korzystania ze strony, typ urządzenia oraz przybliżoną
+          lokalizację. Dane służą wyłącznie ulepszaniu strony i ocenie zainteresowania usługami.
+        </p>
+        <p>
+          Bez zgody Clarity działa w ograniczonym trybie bez cookies. Po wyrażeniu
+          zgody może używać cookies <code>_clck</code> i <code>_clsk</code>, aby łączyć
+          odsłony w sesje. Nie udzielam zgody na wykorzystanie danych reklamowych.
+        </p>
+        <h3>Twoja decyzja</h3>
+        <p>
+          Zgoda jest dobrowolna i możesz ją zmienić w każdej chwili przyciskiem
+          „Ustawienia analityki” w stopce. Więcej informacji zawiera
+          <a href="https://privacy.microsoft.com/pl-pl/privacystatement" target="_blank" rel="noreferrer">
+            oświadczenie Microsoft o ochronie prywatności
+          </a>.
+        </p>
+      </div>
+    </dialog>
 
     <a class="mobile-call" href="tel:+48605849102">
       <span aria-hidden="true">☎</span> Zadzwoń
     </a>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260807-3"></script>
   </body>
 </html>

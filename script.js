@@ -49,3 +49,67 @@ if (rotatingText && !reducedMotion.matches) {
 document.querySelectorAll("[data-year]").forEach((element) => {
   element.textContent = String(new Date().getFullYear());
 });
+
+const analyticsConsentKey = "mo-analytics-consent";
+const consentBanner = document.querySelector("[data-consent-banner]");
+const acceptAnalyticsButton = document.querySelector("[data-consent-accept]");
+const declineAnalyticsButton = document.querySelector("[data-consent-decline]");
+const consentSettingsButton = document.querySelector("[data-consent-settings]");
+const privacyDialog = document.querySelector("[data-privacy-dialog]");
+const privacyOpenButtons = document.querySelectorAll("[data-open-privacy]");
+const privacyCloseButton = document.querySelector("[data-close-privacy]");
+
+function readAnalyticsConsent() {
+  try {
+    return window.localStorage.getItem(analyticsConsentKey);
+  } catch (error) {
+    return null;
+  }
+}
+
+function saveAnalyticsConsent(value) {
+  try {
+    window.localStorage.setItem(analyticsConsentKey, value);
+  } catch (error) {
+    // Gdy pamięć przeglądarki jest niedostępna, decyzja obowiązuje do zamknięcia strony.
+  }
+}
+
+function applyAnalyticsConsent(value) {
+  window.clarity?.("consentv2", {
+    ad_Storage: "denied",
+    analytics_Storage: value === "granted" ? "granted" : "denied",
+  });
+}
+
+function chooseAnalyticsConsent(value) {
+  saveAnalyticsConsent(value);
+  applyAnalyticsConsent(value);
+  consentBanner?.setAttribute("hidden", "");
+}
+
+if (!readAnalyticsConsent()) {
+  consentBanner?.removeAttribute("hidden");
+}
+
+acceptAnalyticsButton?.addEventListener("click", () => chooseAnalyticsConsent("granted"));
+declineAnalyticsButton?.addEventListener("click", () => chooseAnalyticsConsent("denied"));
+
+consentSettingsButton?.addEventListener("click", () => {
+  consentBanner?.removeAttribute("hidden");
+  acceptAnalyticsButton?.focus();
+});
+
+privacyOpenButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (typeof privacyDialog?.showModal === "function") {
+      privacyDialog.showModal();
+    }
+  });
+});
+
+privacyCloseButton?.addEventListener("click", () => privacyDialog?.close());
+
+privacyDialog?.addEventListener("click", (event) => {
+  if (event.target === privacyDialog) privacyDialog.close();
+});

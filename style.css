@@ -96,7 +96,6 @@ a {
   border-bottom: 1px solid rgba(185, 242, 39, 0.15);
   backdrop-filter: blur(16px);
   box-shadow: 0 10px 35px rgba(2, 10, 8, 0.18);
-  overflow: hidden;
 }
 
 .nav-wrap {

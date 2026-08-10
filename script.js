@@ -125,52 +125,30 @@ function setContactFormStatus(message, type = "") {
   contactFormStatus.classList.toggle("is-error", type === "error");
 }
 
-contactForm?.addEventListener("submit", async (event) => {
-  event.preventDefault();
-
-  if (!contactForm.reportValidity()) return;
-
+contactForm?.addEventListener("submit", (event) => {
   const formData = new FormData(contactForm);
   if (String(formData.get("_honey") || "").trim()) {
+    event.preventDefault();
     contactForm.reset();
     setContactFormStatus("Dziękuję. Wiadomość została przyjęta.", "success");
     return;
   }
 
-  const originalButtonText = contactSubmitButton?.innerHTML;
   if (contactSubmitButton) {
     contactSubmitButton.disabled = true;
     contactSubmitButton.textContent = "Wysyłanie…";
   }
   setContactFormStatus("Bezpiecznie przekazuję wiadomość…");
-
-  try {
-    const payload = Object.fromEntries(formData.entries());
-    const response = await fetch(contactForm.action, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
-
-    const result = await response.json().catch(() => ({}));
-    if (!response.ok || result.success === false || result.success === "false") {
-      throw new Error("Form submission failed");
-    }
-
-    contactForm.reset();
-    setContactFormStatus("Wiadomość wysłana. Odpowiem na podany adres e-mail.", "success");
-  } catch (error) {
-    setContactFormStatus(
-      "Nie udało się wysłać formularza. Napisz na kontakt@smartpomiary.pl lub zadzwoń.",
-      "error",
-    );
-  } finally {
-    if (contactSubmitButton) {
-      contactSubmitButton.disabled = false;
-      contactSubmitButton.innerHTML = originalButtonText || "Wyślij zapytanie";
-    }
-  }
 });
+
+const contactUrlParams = new URLSearchParams(window.location.search);
+if (contactForm && contactUrlParams.get("wyslano") === "1") {
+  contactForm.reset();
+  setContactFormStatus("Wiadomość wysłana. Odpowiem na podany adres e-mail.", "success");
+
+  const cleanContactUrl = `${window.location.pathname}${window.location.hash || "#formularz"}`;
+  window.history.replaceState({}, "", cleanContactUrl);
+  if (contactSubmitButton) {
+    contactSubmitButton.disabled = false;
+  }
+}

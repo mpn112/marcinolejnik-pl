@@ -1232,12 +1232,13 @@
           <form
             class="inquiry-form"
             data-contact-form
-            action="https://formsubmit.co/ajax/kontakt@smartpomiary.pl"
+            action="https://formsubmit.co/kontakt@smartpomiary.pl"
             method="POST"
           >
             <input type="hidden" name="_subject" value="Nowe zapytanie ze SmartPomiary.pl" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://smartpomiary.pl/?wyslano=1#formularz" />
             <input type="hidden" name="_url" value="https://smartpomiary.pl/#formularz" />
             <div class="form-honeypot" aria-hidden="true">
               <label for="company-website">Strona internetowa firmy</label>
@@ -1424,6 +1425,6 @@
       <span aria-hidden="true">☎</span> Zadzwoń
     </a>
 
-    <script src="script.js?v=20260807-4"></script>
+    <script src="script.js?v=20260807-5"></script>
   </body>
 </html>

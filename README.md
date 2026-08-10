@@ -1,6 +1,6 @@
-# marcinolejnik.pl
+# SmartPomiary.pl
 
-Lekka strona usługowa Marcina Olejnika, przygotowana do publikacji przez
+Lekka strona usługowa marki SmartPomiary.pl, prowadzonej przez Marcina Olejnika i przygotowana do publikacji przez
 GitHub i Azure Static Web Apps.
 
 ## Technologia

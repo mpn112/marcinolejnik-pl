@@ -50,7 +50,7 @@ document.querySelectorAll("[data-year]").forEach((element) => {
   element.textContent = String(new Date().getFullYear());
 });
 
-const analyticsConsentKey = "mo-analytics-consent";
+const analyticsConsentKey = "smartpomiary-analytics-consent";
 const consentBanner = document.querySelector("[data-consent-banner]");
 const acceptAnalyticsButton = document.querySelector("[data-consent-accept]");
 const declineAnalyticsButton = document.querySelector("[data-consent-decline]");

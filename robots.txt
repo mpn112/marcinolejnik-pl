@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://marcinolejnik.pl/sitemap.xml
+Sitemap: https://smartpomiary.pl/sitemap.xml

@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Diagnostyka fotowoltaiki, magazyny energii oraz pomiary elektryczne w Ruścu i okolicach. Marcin Olejnik — kwalifikacje G1 E i D."
+      content="SmartPomiary.pl — diagnostyka fotowoltaiki, magazyny energii oraz pomiary elektryczne w Ruścu i na terenie woj. mazowieckiego. Kwalifikacje G1 E i D."
     />
     <meta name="theme-color" content="#07120f" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pl_PL" />
-    <meta property="og:title" content="Marcin Olejnik — Fotowoltaika i pomiary elektryczne" />
+    <meta property="og:site_name" content="SmartPomiary.pl" />
+    <meta property="og:title" content="SmartPomiary.pl — Fotowoltaika i pomiary elektryczne" />
     <meta
       property="og:description"
       content="Diagnostyka niedziałających instalacji PV, magazyny energii, pomiary i protokoły."
     />
-    <meta property="og:url" content="https://marcinolejnik.pl/" />
-    <link rel="canonical" href="https://marcinolejnik.pl/" />
+    <meta property="og:url" content="https://smartpomiary.pl/" />
+    <link rel="canonical" href="https://smartpomiary.pl/" />
     <link rel="stylesheet" href="style.css?v=20260807-7" />
     <script>
       (function (c, l, a, r, i, t, y) {
         c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
 
-        if (l.hostname === "marcinolejnik.pl" || l.hostname === "www.marcinolejnik.pl") {
+        if (l.hostname === "smartpomiary.pl" || l.hostname === "www.smartpomiary.pl") {
           t = document.createElement(r);
           t.async = 1;
           t.src = "https://www.clarity.ms/tag/" + i;
@@ -31,7 +32,7 @@
         }
 
         var storedConsent = null;
-        try { storedConsent = localStorage.getItem("mo-analytics-consent"); } catch (error) {}
+        try { storedConsent = localStorage.getItem("smartpomiary-analytics-consent"); } catch (error) {}
 
         c[a]("consentv2", {
           ad_Storage: "denied",
@@ -39,7 +40,25 @@
         });
       })(window, location, "clarity", "script", "xylq0kqjkl");
     </script>
-    <title>Fotowoltaika i pomiary elektryczne — Marcin Olejnik, Rusiec</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Electrician",
+        "name": "SmartPomiary.pl",
+        "legalName": "Marcin Olejnik",
+        "url": "https://smartpomiary.pl/",
+        "telephone": "+48605849102",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Rusiec",
+          "addressRegion": "mazowieckie",
+          "addressCountry": "PL"
+        },
+        "areaServed": "województwo mazowieckie",
+        "description": "Diagnostyka i pomiary instalacji fotowoltaicznych, pomiary elektryczne, magazyny energii i automatyka Smart Home."
+      }
+    </script>
+    <title>Diagnostyka fotowoltaiki i pomiary elektryczne — SmartPomiary.pl</title>
   </head>
   <body>
     <svg class="svg-sprite" aria-hidden="true">
@@ -153,14 +172,11 @@
         <span style="--x: 97%; --delay: -10s; --speed: 11.5s">1001011010</span>
       </div>
       <div class="container nav-wrap">
-        <a class="brand" href="#start" aria-label="Marcin Olejnik — strona główna">
-          <img
-            class="brand-logo"
-            src="assets/logo-marcin-olejnik.png"
-            alt="MarcinOlejnik.pl"
-            width="1522"
-            height="407"
-          />
+        <a class="brand" href="#start" aria-label="SmartPomiary.pl — strona główna">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/brand-ai-head.png" alt="" width="1522" height="407" />
+          </span>
+          <span class="brand-wordmark">SmartPomiary<span>.pl</span></span>
         </a>
 
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">
@@ -1218,19 +1234,15 @@
 
     <footer class="site-footer">
       <div class="container footer-grid">
-        <div class="brand footer-brand">
-          <img
-            class="brand-logo"
-            src="assets/logo-marcin-olejnik.png"
-            alt="MarcinOlejnik.pl"
-            width="1522"
-            height="407"
-            loading="lazy"
-          />
+        <div class="brand footer-brand" aria-label="SmartPomiary.pl">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/brand-ai-head.png" alt="" width="1522" height="407" loading="lazy" />
+          </span>
+          <span class="brand-wordmark">SmartPomiary<span>.pl</span></span>
         </div>
         <p>Rusiec, woj. mazowieckie</p>
         <a href="tel:+48605849102">605 849 102</a>
-        <p>© <span data-year></span> Marcin Olejnik</p>
+        <p>© <span data-year></span> SmartPomiary.pl</p>
       </div>
       <div class="container footer-legal">
         <button type="button" data-open-privacy>Polityka prywatności</button>

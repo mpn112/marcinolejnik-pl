@@ -4058,8 +4058,17 @@ h1 em {
 }
 
 .form-field select {
-  color-scheme: dark;
+  color-scheme: light;
   cursor: pointer;
+}
+
+.form-field select option {
+  color: #07130f;
+  background: #f7faf8;
+}
+
+.form-field select option:disabled {
+  color: #66736e;
 }
 
 .form-field input::placeholder,

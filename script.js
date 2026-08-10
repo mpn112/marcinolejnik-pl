@@ -113,3 +113,64 @@ privacyCloseButton?.addEventListener("click", () => privacyDialog?.close());
 privacyDialog?.addEventListener("click", (event) => {
   if (event.target === privacyDialog) privacyDialog.close();
 });
+
+const contactForm = document.querySelector("[data-contact-form]");
+const contactSubmitButton = contactForm?.querySelector("[data-form-submit]");
+const contactFormStatus = contactForm?.querySelector("[data-form-status]");
+
+function setContactFormStatus(message, type = "") {
+  if (!contactFormStatus) return;
+  contactFormStatus.textContent = message;
+  contactFormStatus.classList.toggle("is-success", type === "success");
+  contactFormStatus.classList.toggle("is-error", type === "error");
+}
+
+contactForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  if (!contactForm.reportValidity()) return;
+
+  const formData = new FormData(contactForm);
+  if (String(formData.get("_honey") || "").trim()) {
+    contactForm.reset();
+    setContactFormStatus("Dziękuję. Wiadomość została przyjęta.", "success");
+    return;
+  }
+
+  const originalButtonText = contactSubmitButton?.innerHTML;
+  if (contactSubmitButton) {
+    contactSubmitButton.disabled = true;
+    contactSubmitButton.textContent = "Wysyłanie…";
+  }
+  setContactFormStatus("Bezpiecznie przekazuję wiadomość…");
+
+  try {
+    const payload = Object.fromEntries(formData.entries());
+    const response = await fetch(contactForm.action, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || result.success === false || result.success === "false") {
+      throw new Error("Form submission failed");
+    }
+
+    contactForm.reset();
+    setContactFormStatus("Wiadomość wysłana. Odpowiem na podany adres e-mail.", "success");
+  } catch (error) {
+    setContactFormStatus(
+      "Nie udało się wysłać formularza. Napisz na kontakt@smartpomiary.pl lub zadzwoń.",
+      "error",
+    );
+  } finally {
+    if (contactSubmitButton) {
+      contactSubmitButton.disabled = false;
+      contactSubmitButton.innerHTML = originalButtonText || "Wyślij zapytanie";
+    }
+  }
+});

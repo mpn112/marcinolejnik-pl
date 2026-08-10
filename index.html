@@ -18,7 +18,7 @@
     />
     <meta property="og:url" content="https://smartpomiary.pl/" />
     <link rel="canonical" href="https://smartpomiary.pl/" />
-    <link rel="stylesheet" href="style.css?v=20260807-8" />
+    <link rel="stylesheet" href="style.css?v=20260807-9" />
     <script>
       (function (c, l, a, r, i, t, y) {
         c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
@@ -192,6 +192,7 @@
           <a href="#automatyka">Smart Home</a>
           <a href="#uslugi-it">Usługi IT</a>
           <a href="#kwalifikacje">Kwalifikacje</a>
+          <a href="#formularz">Kontakt</a>
           <a class="nav-phone" href="tel:+48605849102">605 849 102</a>
         </nav>
       </div>
@@ -1210,6 +1211,100 @@
         </div>
       </section>
 
+      <section id="formularz" class="inquiry-section">
+        <div class="inquiry-orbit inquiry-orbit-one" aria-hidden="true"></div>
+        <div class="inquiry-orbit inquiry-orbit-two" aria-hidden="true"></div>
+        <div class="container inquiry-layout">
+          <div class="inquiry-copy">
+            <p class="eyebrow"><span></span> Formularz kontaktowy</p>
+            <h2>Opisz instalację.<br /><em>Wrócę z konkretem.</em></h2>
+            <p>
+              Napisz, co nie działa albo jaki zakres pomiarów planujesz. Im więcej konkretów podasz,
+              tym trafniej przygotuję pierwszą ocenę i dalsze kroki.
+            </p>
+            <div class="inquiry-signals" aria-label="Jak wygląda kontakt">
+              <span><b>01</b> Bez pośredników</span>
+              <span><b>02</b> Odpowiedź na Twój e-mail</span>
+              <span><b>03</b> Dane tylko do obsługi zapytania</span>
+            </div>
+          </div>
+
+          <form
+            class="inquiry-form"
+            data-contact-form
+            action="https://formsubmit.co/ajax/kontakt@smartpomiary.pl"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="Nowe zapytanie ze SmartPomiary.pl" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_url" value="https://smartpomiary.pl/#formularz" />
+            <div class="form-honeypot" aria-hidden="true">
+              <label for="company-website">Strona internetowa firmy</label>
+              <input id="company-website" name="_honey" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="form-grid">
+              <label class="form-field">
+                <span>Imię i nazwisko *</span>
+                <input name="name" type="text" autocomplete="name" required maxlength="80" placeholder="Jan Kowalski" />
+              </label>
+              <label class="form-field">
+                <span>Adres e-mail *</span>
+                <input name="email" type="email" autocomplete="email" required maxlength="120" placeholder="jan@adres.pl" />
+              </label>
+              <label class="form-field">
+                <span>Telefon</span>
+                <input name="telefon" type="tel" autocomplete="tel" maxlength="30" placeholder="600 000 000" />
+              </label>
+              <label class="form-field">
+                <span>Miejscowość</span>
+                <input name="miejscowosc" type="text" autocomplete="address-level2" maxlength="80" placeholder="Miejscowość realizacji" />
+              </label>
+              <label class="form-field form-field-wide">
+                <span>W czym mogę pomóc? *</span>
+                <select name="usluga" required>
+                  <option value="" selected disabled>Wybierz zakres</option>
+                  <option>Diagnostyka lub pomiary fotowoltaiki</option>
+                  <option>Odbiór instalacji fotowoltaicznej</option>
+                  <option>Pomiary lub przegląd instalacji elektrycznej</option>
+                  <option>Magazyn energii</option>
+                  <option>Smart Home / Home Assistant</option>
+                  <option>Usługi IT i aplikacje</option>
+                  <option>Inny temat</option>
+                </select>
+              </label>
+              <label class="form-field form-field-wide">
+                <span>Opis zapytania *</span>
+                <textarea
+                  name="wiadomosc"
+                  required
+                  minlength="20"
+                  maxlength="3000"
+                  rows="6"
+                  placeholder="Opisz instalację, objawy, moc PV, model falownika lub zakres potrzebnych pomiarów…"
+                ></textarea>
+              </label>
+            </div>
+
+            <label class="form-consent">
+              <input name="zgoda" type="checkbox" value="Wyrażona" required />
+              <span>
+                Zgadzam się na przetwarzanie podanych danych w celu odpowiedzi na zapytanie.
+                <button type="button" data-open-privacy>Polityka prywatności</button>
+              </span>
+            </label>
+
+            <div class="form-submit-row">
+              <button class="button button-primary form-submit" type="submit" data-form-submit>
+                Wyślij zapytanie <span aria-hidden="true">↗</span>
+              </button>
+              <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+
       <section id="kontakt" class="contact-section">
         <div class="container contact-card">
           <div>
@@ -1307,6 +1402,13 @@
           zgody może używać cookies <code>_clck</code> i <code>_clsk</code>, aby łączyć
           odsłony w sesje. Nie udzielam zgody na wykorzystanie danych reklamowych.
         </p>
+        <h3>Formularz kontaktowy</h3>
+        <p>
+          Dane wpisane w formularzu są wykorzystywane wyłącznie do udzielenia odpowiedzi na
+          zapytanie. Techniczne przekazanie wiadomości na adres
+          <a href="mailto:kontakt@smartpomiary.pl">kontakt@smartpomiary.pl</a> realizuje usługa
+          FormSubmit. Nie wykorzystuję tych danych do newslettera ani reklamy.
+        </p>
         <h3>Twoja decyzja</h3>
         <p>
           Zgoda jest dobrowolna i możesz ją zmienić w każdej chwili przyciskiem
@@ -1322,6 +1424,6 @@
       <span aria-hidden="true">☎</span> Zadzwoń
     </a>
 
-    <script src="script.js?v=20260807-3"></script>
+    <script src="script.js?v=20260807-4"></script>
   </body>
 </html>

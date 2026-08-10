@@ -4386,21 +4386,51 @@ h1 em {
   position: fixed;
   z-index: 200;
   right: 22px;
-  bottom: 22px;
+  bottom: clamp(42px, 7vh, 72px);
   left: 22px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  width: min(calc(100% - 44px), 1050px);
+  width: min(calc(100% - 44px), 1090px);
   margin-inline: auto;
-  padding: 22px;
+  padding: 24px;
   color: #effaf5;
   background:
-    radial-gradient(circle at 88% 12%, rgba(185, 242, 39, 0.13), transparent 29%),
-    linear-gradient(145deg, rgba(7, 28, 22, 0.98), rgba(6, 21, 17, 0.98));
-  border: 1px solid rgba(37, 204, 242, 0.25);
+    radial-gradient(circle at 88% 12%, rgba(185, 242, 39, 0.2), transparent 31%),
+    radial-gradient(circle at 8% 105%, rgba(24, 214, 242, 0.13), transparent 34%),
+    linear-gradient(145deg, rgba(8, 37, 28, 0.995), rgba(5, 22, 18, 0.995));
+  border: 1px solid rgba(37, 204, 242, 0.52);
   border-radius: 20px;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 0 0 1px rgba(185, 242, 39, 0.09),
+    0 30px 90px rgba(0, 0, 0, 0.7),
+    0 0 46px rgba(24, 214, 242, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.09);
   backdrop-filter: blur(18px);
+  overflow: hidden;
+  animation: consent-banner-rise 320ms ease-out both;
+}
+
+.consent-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 24px;
+  left: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), var(--green), transparent);
+  box-shadow: 0 0 15px rgba(24, 214, 242, 0.6), 0 0 20px rgba(185, 242, 39, 0.36);
+}
+
+@keyframes consent-banner-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .consent-copy {
@@ -4424,15 +4454,15 @@ h1 em {
 
 .consent-copy h2 {
   margin: 0;
-  font-size: 17px;
+  font-size: 18px;
   letter-spacing: -0.02em;
 }
 
 .consent-copy p {
   max-width: 610px;
   margin: 7px 0 0;
-  color: rgba(235, 247, 241, 0.58);
-  font-size: 12px;
+  color: rgba(235, 247, 241, 0.76);
+  font-size: 12.5px;
   line-height: 1.55;
 }
 
@@ -4462,15 +4492,16 @@ h1 em {
 }
 
 .consent-decline {
-  color: rgba(235, 247, 241, 0.72);
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(244, 252, 248, 0.88);
+  background: rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .consent-accept {
   color: #07150f;
   background: var(--green);
   border: 1px solid var(--green);
+  box-shadow: 0 0 24px rgba(185, 242, 39, 0.22);
 }
 
 .privacy-dialog {
@@ -5329,7 +5360,7 @@ h1 em {
 
   .consent-banner {
     right: 10px;
-    bottom: 10px;
+    bottom: max(18px, env(safe-area-inset-bottom));
     left: 10px;
     grid-template-columns: 1fr;
     width: calc(100% - 20px);

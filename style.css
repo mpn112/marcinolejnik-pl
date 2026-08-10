@@ -194,7 +194,7 @@ a {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 12px;
 }
 
 .main-nav a {
@@ -214,6 +214,44 @@ a {
   color: var(--dark);
   background: var(--green);
   border-radius: 100px;
+}
+
+.main-nav .nav-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 10px;
+  color: rgba(213, 248, 255, 0.9);
+  background: rgba(24, 214, 242, 0.055);
+  border: 1px solid rgba(24, 214, 242, 0.2);
+  border-radius: 100px;
+  font-size: 12px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.main-nav .nav-email svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--cyan);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 5px rgba(24, 214, 242, 0.42));
+}
+
+.main-nav .nav-email:hover,
+.main-nav .nav-email:focus-visible {
+  color: var(--white);
+  background: rgba(24, 214, 242, 0.11);
+  border-color: rgba(24, 214, 242, 0.42);
+}
+
+@media (min-width: 901px) and (max-width: 1120px) {
+  .main-nav .nav-email {
+    display: none;
+  }
 }
 
 .menu-button {
@@ -4687,6 +4725,11 @@ h1 em {
     margin-top: 16px;
     text-align: center;
     border: 0;
+  }
+
+  .main-nav .nav-email {
+    display: flex;
+    font-size: 16px;
   }
 }
 

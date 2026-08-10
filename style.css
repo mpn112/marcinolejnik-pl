@@ -3901,11 +3901,14 @@ h1 em {
 }
 
 .contact-phone small,
-.contact-phone strong {
+.contact-phone strong,
+.contact-email small,
+.contact-email strong {
   display: block;
 }
 
-.contact-phone small {
+.contact-phone small,
+.contact-email small {
   color: rgba(255, 255, 255, 0.48);
   font-size: 12px;
   text-transform: uppercase;
@@ -3917,6 +3920,24 @@ h1 em {
   color: var(--green);
   font: 700 clamp(30px, 4vw, 44px)/1 "Manrope", sans-serif;
   letter-spacing: -0.04em;
+}
+
+.contact-email {
+  padding: 10px 0 4px;
+}
+
+.contact-email strong {
+  margin-top: 5px;
+  color: var(--white);
+  font: 700 clamp(17px, 2vw, 22px)/1.25 "Manrope", sans-serif;
+  letter-spacing: -0.025em;
+  transition: color 180ms ease, text-shadow 180ms ease;
+}
+
+.contact-email:hover strong,
+.contact-email:focus-visible strong {
+  color: var(--green);
+  text-shadow: 0 0 20px rgba(183, 255, 0, 0.28);
 }
 
 .button-white {
@@ -3940,7 +3961,7 @@ h1 em {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 0.7fr 0.8fr;
+  grid-template-columns: 1.5fr 0.9fr 0.65fr 1.25fr 0.75fr;
   gap: 25px;
   align-items: center;
 }

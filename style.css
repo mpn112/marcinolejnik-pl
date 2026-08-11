@@ -2142,6 +2142,17 @@ h1 em {
   background: rgba(37, 204, 242, 0.055);
   border: 1px solid rgba(37, 204, 242, 0.11);
   border-radius: 11px;
+  cursor: default;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.console-metrics > span:is(:hover, :focus-visible) {
+  z-index: 2;
+  background: linear-gradient(135deg, rgba(37, 204, 242, 0.13), rgba(185, 242, 39, 0.09));
+  border-color: rgba(42, 208, 245, 0.4);
+  outline: none;
+  box-shadow: 0 10px 26px rgba(0, 8, 6, 0.22), 0 0 24px rgba(42, 208, 245, 0.09);
+  transform: translateY(-3px);
 }
 
 .console-metrics small,
@@ -2152,12 +2163,26 @@ h1 em {
   font-size: 8px;
   line-height: 1.25;
   text-transform: uppercase;
+  transform-origin: left center;
+  transition: color 180ms ease, transform 180ms ease, text-shadow 180ms ease;
+}
+
+.console-metrics > span:is(:hover, :focus-visible) small {
+  color: #f4fff9;
+  text-shadow: 0 0 13px rgba(42, 208, 245, 0.38);
+  transform: scale(1.32);
 }
 
 .console-metrics strong {
   margin-top: 5px;
   color: #2ad0f5;
   font: 750 16px/1 "Manrope", sans-serif;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.console-metrics > span:is(:hover, :focus-visible) strong {
+  color: var(--green);
+  transform: translateY(3px);
 }
 
 .inspection-grid {

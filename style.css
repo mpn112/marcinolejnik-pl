@@ -66,8 +66,8 @@ main > section {
 }
 
 #start { order: 1; }
-#uslugi { order: 2; }
-#sprzet-pomiarowy { order: 3; }
+#sprzet-pomiarowy { order: 2; }
+#uslugi { order: 3; }
 .problem-strip { order: 4; }
 #cennik-pv { order: 5; }
 #pomiary-elektryczne { order: 6; }

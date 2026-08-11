@@ -56,6 +56,28 @@ a {
   margin-inline: auto;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+main > section {
+  width: 100%;
+}
+
+#start { order: 1; }
+#uslugi { order: 2; }
+#cennik-pv { order: 3; }
+#pomiary-elektryczne { order: 4; }
+#cennik { order: 5; }
+#sprzet-pomiarowy { order: 6; }
+.problem-strip { order: 7; }
+#automatyka { order: 8; }
+#jak-dzialam { order: 9; }
+#kwalifikacje { order: 10; }
+#formularz { order: 11; }
+#uslugi-it { order: 12; }
+
 .skip-link {
   position: fixed;
   z-index: 1000;
@@ -3665,6 +3687,7 @@ h1 em {
 
 .technology-section {
   position: relative;
+  padding-block: 92px;
   overflow: hidden;
   color: #eef8f3;
   background:
@@ -3729,7 +3752,7 @@ h1 em {
   gap: 30px;
   align-items: center;
   margin-bottom: 22px;
-  padding: 28px 30px;
+  padding: 22px 26px;
   background:
     radial-gradient(circle at 90% 25%, rgba(185, 242, 39, 0.12), transparent 36%),
     rgba(255, 255, 255, 0.05);
@@ -3807,8 +3830,8 @@ h1 em {
 .it-grid article {
   position: relative;
   grid-column: span 2;
-  min-height: 220px;
-  padding: 32px;
+  min-height: 200px;
+  padding: 28px;
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025));
   border: 1px solid rgba(214, 238, 222, 0.12);
@@ -3819,7 +3842,7 @@ h1 em {
 }
 
 .it-grid article:nth-last-child(1) {
-  grid-column: 3 / span 2;
+  grid-column: span 2;
 }
 
 .it-grid article:hover {
@@ -4085,6 +4108,41 @@ h1 em {
   border: 1px solid rgba(24, 214, 242, 0.25);
   border-radius: 9px;
   font: 700 10px/1 monospace;
+}
+
+.inquiry-direct-contact {
+  display: grid;
+  gap: 10px;
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inquiry-direct-contact a {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: baseline;
+  color: var(--white);
+}
+
+.inquiry-direct-contact small {
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.inquiry-direct-contact strong {
+  color: var(--green);
+  font-size: 17px;
+  overflow-wrap: anywhere;
+}
+
+.inquiry-direct-contact > span {
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 11px;
 }
 
 .inquiry-form {
@@ -5342,7 +5400,7 @@ h1 em {
   }
 
   .site-footer {
-    padding-bottom: 112px;
+    padding-bottom: 50px;
   }
 
   .footer-brand {

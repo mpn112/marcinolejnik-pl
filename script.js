@@ -50,6 +50,25 @@ document.querySelectorAll("[data-year]").forEach((element) => {
   element.textContent = String(new Date().getFullYear());
 });
 
+document.querySelectorAll(".pv-service-grid").forEach((grid) => {
+  const cards = [...grid.querySelectorAll(".pv-service-card")];
+  const defaultCard = grid.querySelector(".pv-service-primary") || cards[0];
+
+  const activateCard = (activeCard) => {
+    cards.forEach((card) => card.classList.toggle("is-active", card === activeCard));
+  };
+
+  cards.forEach((card) => {
+    card.addEventListener("mouseenter", () => activateCard(card));
+    card.addEventListener("focus", () => activateCard(card));
+  });
+
+  grid.addEventListener("mouseleave", () => activateCard(defaultCard));
+  grid.addEventListener("focusout", (event) => {
+    if (!grid.contains(event.relatedTarget)) activateCard(defaultCard);
+  });
+});
+
 const analyticsConsentKey = "smartpomiary-analytics-consent";
 const consentBanner = document.querySelector("[data-consent-banner]");
 const acceptAnalyticsButton = document.querySelector("[data-consent-accept]");

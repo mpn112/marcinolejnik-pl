@@ -1200,7 +1200,12 @@ h1 em {
   box-shadow: 0 26px 55px rgba(12, 48, 38, 0.12);
 }
 
-.pv-service-primary {
+.pv-service-card:focus-visible {
+  outline: 2px solid rgba(24, 188, 242, 0.8);
+  outline-offset: 4px;
+}
+
+.pv-service-card.is-active {
   color: #effaf5;
   background:
     radial-gradient(circle at 90% 12%, rgba(185, 242, 39, 0.14), transparent 28%),
@@ -1209,7 +1214,7 @@ h1 em {
   box-shadow: 0 24px 60px rgba(6, 30, 23, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
-.pv-service-primary::after {
+.pv-service-card.is-active::after {
   position: absolute;
   inset: 0;
   background-image:
@@ -1242,7 +1247,7 @@ h1 em {
   text-transform: uppercase;
 }
 
-.pv-service-primary .pv-card-topline { color: rgba(235, 247, 241, 0.43); }
+.pv-service-card.is-active .pv-card-topline { color: rgba(235, 247, 241, 0.43); }
 
 .pv-card-topline i {
   padding: 6px 8px;
@@ -1253,7 +1258,7 @@ h1 em {
   border-radius: 7px;
 }
 
-.pv-service-primary .pv-card-topline i { color: #2ad4f7; }
+.pv-service-card.is-active .pv-card-topline i { color: #2ad4f7; }
 
 .pv-service-icon {
   display: block;
@@ -1272,7 +1277,7 @@ h1 em {
   border-radius: 17px;
 }
 
-.pv-service-primary .pv-service-icon {
+.pv-service-card.is-active .pv-service-icon {
   color: var(--green);
   box-shadow: 0 0 30px rgba(185, 242, 39, 0.09);
 }
@@ -1290,7 +1295,7 @@ h1 em {
   line-height: 1.62;
 }
 
-.pv-service-primary p { color: rgba(235, 247, 241, 0.62); }
+.pv-service-card.is-active p { color: rgba(235, 247, 241, 0.62); }
 
 .pv-service-card ul {
   margin: 0;
@@ -1299,7 +1304,7 @@ h1 em {
   list-style: none;
 }
 
-.pv-service-primary ul { border-color: rgba(255, 255, 255, 0.11); }
+.pv-service-card.is-active ul { border-color: rgba(255, 255, 255, 0.11); }
 
 .pv-service-card li {
   position: relative;
@@ -1310,7 +1315,7 @@ h1 em {
   line-height: 1.45;
 }
 
-.pv-service-primary li { color: rgba(235, 247, 241, 0.62); }
+.pv-service-card.is-active li { color: rgba(235, 247, 241, 0.62); }
 
 .pv-service-card li::before {
   position: absolute;
@@ -1323,7 +1328,7 @@ h1 em {
   content: "";
 }
 
-.pv-service-primary li::before { background: var(--green); box-shadow: 0 0 10px rgba(185, 242, 39, 0.45); }
+.pv-service-card.is-active li::before { background: var(--green); box-shadow: 0 0 10px rgba(185, 242, 39, 0.45); }
 
 .pv-data-flow {
   display: flex;

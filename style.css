@@ -1937,6 +1937,19 @@ h1 em {
   border: 1px solid rgba(185, 242, 39, 0.13);
   border-radius: 9px;
   font: 800 12px/1 "Manrope", sans-serif;
+  cursor: default;
+  transition: color 180ms ease, transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, text-shadow 180ms ease;
+}
+
+.pv-proof-tags span:is(:hover, :focus-visible) {
+  z-index: 2;
+  color: #f5fffb;
+  background: linear-gradient(135deg, rgba(37, 204, 242, 0.15), rgba(185, 242, 39, 0.12));
+  border-color: rgba(185, 242, 39, 0.48);
+  outline: none;
+  box-shadow: 0 9px 24px rgba(0, 8, 6, 0.24), 0 0 22px rgba(185, 242, 39, 0.13);
+  text-shadow: 0 0 12px rgba(185, 242, 39, 0.55);
+  transform: translateY(-3px) scale(1.08);
 }
 
 .pv-pricing-note {

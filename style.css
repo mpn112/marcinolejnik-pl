@@ -1929,6 +1929,7 @@ h1 em {
 }
 
 .pv-proof-tags span {
+  position: relative;
   display: grid;
   min-height: 48px;
   place-items: center;
@@ -1939,6 +1940,35 @@ h1 em {
   font: 800 12px/1 "Manrope", sans-serif;
   cursor: default;
   transition: color 180ms ease, transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, text-shadow 180ms ease;
+}
+
+.pv-proof-tags span::after {
+  position: absolute;
+  z-index: 5;
+  bottom: calc(100% + 9px);
+  left: 50%;
+  width: 154px;
+  padding: 8px 10px;
+  color: #eafff5;
+  background: rgba(3, 22, 17, 0.97);
+  border: 1px solid rgba(42, 208, 245, 0.35);
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(0, 8, 6, 0.32), 0 0 20px rgba(42, 208, 245, 0.08);
+  content: attr(data-help);
+  font: 700 9px/1.35 "Manrope", sans-serif;
+  letter-spacing: 0;
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+  text-shadow: none;
+  text-transform: none;
+  transform: translate(-50%, 5px) scale(0.96);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.pv-proof-tags span:is(:hover, :focus-visible)::after {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
 }
 
 .pv-proof-tags span:is(:hover, :focus-visible) {

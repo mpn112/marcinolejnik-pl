@@ -67,11 +67,11 @@ main > section {
 
 #start { order: 1; }
 #uslugi { order: 2; }
-#cennik-pv { order: 3; }
-#pomiary-elektryczne { order: 4; }
-#cennik { order: 5; }
-#sprzet-pomiarowy { order: 6; }
-.problem-strip { order: 7; }
+#sprzet-pomiarowy { order: 3; }
+.problem-strip { order: 4; }
+#cennik-pv { order: 5; }
+#pomiary-elektryczne { order: 6; }
+#cennik { order: 7; }
 #automatyka { order: 8; }
 #jak-dzialam { order: 9; }
 #kwalifikacje { order: 10; }

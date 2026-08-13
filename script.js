@@ -69,6 +69,25 @@ document.querySelectorAll(".pv-service-grid").forEach((grid) => {
   });
 });
 
+document.querySelectorAll(".pv-pricing-grid").forEach((grid) => {
+  const cards = [...grid.querySelectorAll(".pv-price-card")];
+  const defaultCard = grid.querySelector(".pv-price-card-primary") || cards[0];
+
+  const activateCard = (activeCard) => {
+    cards.forEach((card) => card.classList.toggle("is-active", card === activeCard));
+  };
+
+  cards.forEach((card) => {
+    card.addEventListener("mouseenter", () => activateCard(card));
+    card.addEventListener("focusin", () => activateCard(card));
+  });
+
+  grid.addEventListener("mouseleave", () => activateCard(defaultCard));
+  grid.addEventListener("focusout", (event) => {
+    if (!grid.contains(event.relatedTarget)) activateCard(defaultCard);
+  });
+});
+
 const analyticsConsentKey = "smartpomiary-analytics-consent";
 const consentBanner = document.querySelector("[data-consent-banner]");
 const acceptAnalyticsButton = document.querySelector("[data-consent-accept]");

@@ -3092,8 +3092,8 @@ h1 em {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(430px, 1.1fr);
-  gap: 90px;
+  grid-template-columns: minmax(0, 0.86fr) minmax(500px, 1.14fr);
+  gap: 70px;
   align-items: center;
 }
 
@@ -3534,7 +3534,7 @@ h1 em {
 
 .measurement-device-stage {
   position: relative;
-  min-height: 620px;
+  min-height: 680px;
   display: grid;
   place-items: center;
 }
@@ -3628,7 +3628,7 @@ h1 em {
 .measurement-device-card {
   position: relative;
   z-index: 3;
-  width: min(100%, 540px);
+  width: min(100%, 650px);
   padding: 22px;
   background:
     linear-gradient(145deg, rgba(17, 47, 39, 0.92), rgba(6, 23, 19, 0.95));
@@ -3691,8 +3691,8 @@ h1 em {
   display: block;
   width: 100%;
   height: auto;
-  margin: 28px auto 20px;
-  transform: scale(1.06);
+  margin: 20px auto 16px;
+  transform: scale(1.09);
   filter:
     drop-shadow(0 24px 25px rgba(0, 0, 0, 0.32))
     drop-shadow(0 0 20px rgba(245, 138, 33, 0.12));
@@ -3722,12 +3722,17 @@ h1 em {
   position: relative;
   z-index: 5;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
 }
 
 .device-data-row span {
-  padding: 9px 7px;
+  display: flex;
+  min-height: 60px;
+  padding: 10px 9px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   color: rgba(226, 248, 241, 0.72);
   background: rgba(24, 188, 242, 0.07);
   border: 1px solid rgba(24, 188, 242, 0.14);
@@ -3735,8 +3740,53 @@ h1 em {
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.05em;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
+}
+
+.device-data-row b,
+.device-data-row small {
+  display: block;
+}
+
+.device-data-row b {
+  color: #efffc8;
+  font: 800 10px/1.25 "Manrope", sans-serif;
+  text-shadow: 0 0 12px rgba(185, 242, 39, 0.18);
+}
+
+.device-data-row small {
+  margin-top: 4px;
+  color: rgba(226, 248, 241, 0.46);
+  font-size: 7px;
+  line-height: 1.35;
+  letter-spacing: 0.025em;
+  text-transform: none;
+}
+
+.kit-equipment-heading {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 2px 0 10px;
+}
+
+.kit-equipment-heading span {
+  color: rgba(235, 247, 241, 0.5);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.kit-equipment-heading strong {
+  color: var(--green);
+  font: 800 10px/1 "Manrope", sans-serif;
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 13px rgba(185, 242, 39, 0.3);
 }
 
 .device-photo-credit {
@@ -6083,6 +6133,16 @@ h1 em {
 
   .measurement-device-card img {
     margin: 22px auto 18px;
+  }
+
+  .device-data-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .kit-equipment-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
   }
 
   .device-card-topline span {

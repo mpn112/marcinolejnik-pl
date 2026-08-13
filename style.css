@@ -670,8 +670,8 @@ main > section {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(340px, 0.75fr);
-  gap: 82px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(440px, 0.9fr);
+  gap: 60px;
   align-items: center;
 }
 
@@ -888,6 +888,8 @@ h1 em {
 }
 
 .energy-dashboard {
+  width: 100%;
+  padding: 29px;
   background:
     radial-gradient(circle at 50% 22%, rgba(185, 242, 39, 0.08), transparent 34%),
     rgba(255, 255, 255, 0.055);
@@ -898,7 +900,7 @@ h1 em {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .dashboard-head small,
@@ -908,26 +910,26 @@ h1 em {
 
 .dashboard-head small {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .dashboard-head strong {
   margin-top: 3px;
-  font: 700 18px/1.2 "Manrope", sans-serif;
+  font: 700 21px/1.2 "Manrope", sans-serif;
 }
 
 .dashboard-live {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 7px 10px;
+  padding: 8px 12px;
   color: rgba(255, 255, 255, 0.72);
   background: rgba(7, 18, 15, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 100px;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -942,7 +944,7 @@ h1 em {
 
 .power-flow {
   position: relative;
-  height: 265px;
+  height: 325px;
   background:
     linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
@@ -1111,34 +1113,34 @@ h1 em {
   z-index: 2;
   display: grid;
   justify-items: center;
-  width: 82px;
+  width: 96px;
   transform: translate(-50%, -50%);
 }
 
 .power-node-solar {
-  top: 20%;
+  top: 18%;
   left: 50%;
 }
 
 .power-node-grid {
-  top: 51%;
-  left: 19%;
+  top: 50%;
+  left: 17%;
 }
 
 .power-node-home {
-  top: 51%;
-  left: 81%;
+  top: 50%;
+  left: 83%;
 }
 
 .power-node-battery {
-  top: 82%;
+  top: 84%;
   left: 50%;
 }
 
 .power-node-icon {
   display: grid;
-  width: 48px;
-  height: 48px;
+  width: 58px;
+  height: 58px;
   place-items: center;
   color: var(--green);
   background: rgba(7, 18, 15, 0.92);
@@ -1158,8 +1160,8 @@ h1 em {
 }
 
 .power-node-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 29px;
+  height: 29px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.7;
@@ -1168,28 +1170,28 @@ h1 em {
 }
 
 .power-node strong {
-  margin-top: 4px;
+  margin-top: 6px;
   color: var(--white);
-  font: 700 11px/1 "Manrope", sans-serif;
+  font: 700 13px/1 "Manrope", sans-serif;
 }
 
 .power-node small {
   margin-top: 3px;
   color: rgba(255, 255, 255, 0.5);
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .dashboard-insights {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 12px;
+  margin-top: 12px;
 }
 
 .soc-card,
 .savings-card {
-  min-height: 82px;
-  padding: 12px;
+  min-height: 96px;
+  padding: 15px;
   background: rgba(7, 18, 15, 0.48);
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 14px;
@@ -1204,8 +1206,8 @@ h1 em {
 .soc-ring {
   position: relative;
   display: grid;
-  flex: 0 0 54px;
-  height: 54px;
+  flex: 0 0 64px;
+  height: 64px;
   place-items: center;
   background: conic-gradient(var(--green) 0 21%, rgba(255, 255, 255, 0.08) 21% 100%);
   border-radius: 50%;
@@ -1223,7 +1225,7 @@ h1 em {
   position: relative;
   z-index: 1;
   color: var(--white);
-  font: 700 11px/1 "Manrope", sans-serif;
+  font: 700 12px/1 "Manrope", sans-serif;
 }
 
 .soc-card small,
@@ -1237,33 +1239,33 @@ h1 em {
 .soc-card small,
 .savings-card small {
   color: rgba(255, 255, 255, 0.48);
-  font-size: 9px;
+  font-size: 10px;
   text-transform: uppercase;
 }
 
 .soc-card strong {
   margin-top: 5px;
   color: #3ed7be;
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .savings-card strong {
   margin-top: 4px;
   color: var(--green);
-  font: 700 21px/1.1 "Manrope", sans-serif;
+  font: 700 25px/1.1 "Manrope", sans-serif;
 }
 
 .savings-card span {
   margin-top: 6px;
   color: rgba(255, 255, 255, 0.5);
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.35;
 }
 
 .dashboard-note {
-  margin: 11px 2px 0;
+  margin: 14px 2px 0;
   color: rgba(255, 255, 255, 0.38);
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.05em;
   text-align: center;
   text-transform: uppercase;

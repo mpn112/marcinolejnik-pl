@@ -1,5 +1,5 @@
 :root {
-  --header-height: 94px;
+  --header-height: 106px;
   --ink: #09130f;
   --ink-soft: #3e4b45;
   --paper: #f4f2eb;
@@ -132,7 +132,7 @@ main > section {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .brand-mark {
@@ -142,6 +142,12 @@ main > section {
   width: 52px;
   height: 68px;
   overflow: hidden;
+}
+
+.site-header .brand-mark {
+  flex-basis: 68px;
+  width: 68px;
+  height: 86px;
 }
 
 .brand-mark img {
@@ -155,6 +161,85 @@ main > section {
   filter: drop-shadow(0 0 12px rgba(0, 198, 255, 0.2));
 }
 
+.brand-mark-neural::before {
+  position: absolute;
+  z-index: 2;
+  top: 13%;
+  left: 12%;
+  width: 44px;
+  height: 44px;
+  background: radial-gradient(circle, rgba(255, 197, 67, 0.18), rgba(24, 214, 242, 0.08) 42%, transparent 70%);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+  animation: brand-brain-pulse 2.8s ease-in-out infinite;
+}
+
+.brand-neural-flow {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+}
+
+.brand-neural-flow i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  background: #ffcf55;
+  border-radius: 50%;
+  box-shadow:
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 195, 62, 0.95),
+    0 0 15px rgba(24, 214, 242, 0.72);
+  offset-path: path("M 13 29 C 23 14, 43 13, 54 27 C 45 34, 31 38, 18 49 C 29 54, 40 62, 43 75");
+  animation: brand-neural-travel 3.1s linear infinite;
+}
+
+.brand-neural-flow i:nth-child(2) {
+  background: #56e6ff;
+  offset-path: path("M 9 39 C 20 33, 28 21, 45 20 C 54 26, 51 39, 39 43 C 28 47, 23 59, 31 70");
+  animation-delay: -1.45s;
+  animation-duration: 3.7s;
+}
+
+.brand-neural-flow i:nth-child(3) {
+  width: 3px;
+  height: 3px;
+  offset-path: path("M 20 17 C 32 24, 47 27, 51 40 C 39 44, 32 51, 36 67");
+  animation-delay: -2.2s;
+  animation-duration: 4.2s;
+}
+
+.brand-neural-flow i:nth-child(4) {
+  background: #56e6ff;
+  offset-path: path("M 12 48 C 27 45, 41 35, 51 23 C 48 46, 43 58, 50 73");
+  animation-delay: -0.7s;
+  animation-duration: 3.4s;
+}
+
+.brand-neural-flow i:nth-child(5) {
+  width: 3px;
+  height: 3px;
+  offset-path: path("M 22 12 C 18 28, 29 37, 43 42 C 50 51, 43 62, 39 78");
+  animation-delay: -3.1s;
+  animation-duration: 4.7s;
+}
+
+@keyframes brand-neural-travel {
+  0% { offset-distance: 0%; opacity: 0; transform: scale(0.55); }
+  10% { opacity: 1; }
+  48% { transform: scale(1.45); }
+  88% { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; transform: scale(0.6); }
+}
+
+@keyframes brand-brain-pulse {
+  50% { opacity: 0.42; transform: scale(1.16); filter: blur(1px); }
+}
+
 .brand-wordmark {
   color: #f8fdff;
   font: 800 27px/1 "Manrope", Inter, sans-serif;
@@ -164,6 +249,10 @@ main > section {
     0 0 2px #ffffff,
     0 0 7px rgba(30, 214, 255, 0.96),
     0 0 16px rgba(24, 188, 242, 0.6);
+}
+
+.site-header .brand-wordmark {
+  font-size: 32px;
 }
 
 .brand-wordmark > span {
@@ -5147,6 +5236,14 @@ h1 em {
   .hero-ai-pulses {
     display: none;
   }
+
+  .brand-neural-flow {
+    display: none;
+  }
+
+  .brand-mark-neural::before {
+    animation: none;
+  }
 }
 
 @media (max-width: 980px) {
@@ -5158,6 +5255,21 @@ h1 em {
 
   .brand-wordmark {
     font-size: 24px;
+  }
+
+  .site-header .brand-mark {
+    flex-basis: 58px;
+    width: 58px;
+    height: 74px;
+  }
+
+  .site-header .brand-wordmark {
+    font-size: 27px;
+  }
+
+  .site-header .brand-neural-flow {
+    transform: scale(0.86);
+    transform-origin: top left;
   }
 
   .hero {
@@ -6000,6 +6112,20 @@ h1 em {
 
   .brand-wordmark {
     font-size: 21px;
+  }
+
+  .site-header .brand-mark {
+    flex-basis: 47px;
+    width: 47px;
+    height: 61px;
+  }
+
+  .site-header .brand-wordmark {
+    font-size: 22px;
+  }
+
+  .site-header .brand-neural-flow {
+    transform: scale(0.69);
   }
 
   .header-code-rain span:nth-child(even) {

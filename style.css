@@ -4244,7 +4244,22 @@ h1 em {
   border: 1px solid rgba(24, 188, 242, 0.17);
   border-radius: 20px;
   box-shadow: 0 21px 50px rgba(7, 38, 29, 0.14);
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  transform-origin: center;
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, filter 220ms ease, opacity 220ms ease;
+}
+
+.credential-service-grid article::before {
+  position: absolute;
+  z-index: 1;
+  top: -35%;
+  bottom: -35%;
+  left: -34%;
+  width: 18%;
+  background: linear-gradient(90deg, transparent, rgba(185, 242, 39, 0.15), rgba(42, 208, 245, 0.23), transparent);
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transform: skewX(-18deg);
 }
 
 .credential-service-grid article::after {
@@ -4258,10 +4273,31 @@ h1 em {
   pointer-events: none;
 }
 
-.credential-service-grid article:hover {
-  border-color: rgba(185, 242, 39, 0.34);
-  box-shadow: 0 27px 58px rgba(7, 38, 29, 0.2), 0 0 27px rgba(185, 242, 39, 0.06);
-  transform: translateY(-5px);
+.credential-service-grid:has(article:is(:hover, :focus-visible)) article:not(:is(:hover, :focus-visible)) {
+  filter: saturate(0.72) brightness(0.82);
+  opacity: 0.72;
+  transform: scale(0.985);
+}
+
+.credential-service-grid article:is(:hover, :focus-visible) {
+  z-index: 4;
+  border-color: rgba(185, 242, 39, 0.48);
+  outline: none;
+  box-shadow:
+    0 35px 72px rgba(4, 30, 22, 0.3),
+    0 0 0 1px rgba(42, 208, 245, 0.13),
+    0 0 38px rgba(185, 242, 39, 0.11);
+  transform: translateY(-7px) scale(1.035);
+}
+
+.credential-service-grid article:is(:hover, :focus-visible)::before {
+  opacity: 1;
+  animation: credential-card-scan 1.15s ease-out forwards;
+}
+
+@keyframes credential-card-scan {
+  from { left: -34%; }
+  to { left: 124%; }
 }
 
 .credential-service-number,
@@ -4275,6 +4311,7 @@ h1 em {
   color: #2ad0f5;
   font: 850 10px/1 "Manrope", sans-serif;
   letter-spacing: 0.12em;
+  transition: color 220ms ease, text-shadow 220ms ease, transform 220ms ease;
 }
 
 .credential-service-grid h3 {
@@ -4282,6 +4319,8 @@ h1 em {
   color: #f4fbf7;
   font-size: 24px;
   letter-spacing: -0.035em;
+  transform-origin: left center;
+  transition: color 220ms ease, text-shadow 220ms ease, transform 220ms ease;
 }
 
 .credential-service-grid ul {
@@ -4299,6 +4338,25 @@ h1 em {
   color: rgba(235, 247, 241, 0.65);
   font-size: 12px;
   line-height: 1.5;
+  transform-origin: left center;
+  transition: color 220ms ease, transform 220ms ease;
+}
+
+.credential-service-grid article:is(:hover, :focus-visible) .credential-service-number {
+  color: var(--green);
+  text-shadow: 0 0 12px rgba(185, 242, 39, 0.55);
+  transform: scale(1.12);
+}
+
+.credential-service-grid article:is(:hover, :focus-visible) h3 {
+  color: #ffffff;
+  text-shadow: 0 0 18px rgba(42, 208, 245, 0.18);
+  transform: scale(1.055);
+}
+
+.credential-service-grid article:is(:hover, :focus-visible) li {
+  color: rgba(249, 255, 252, 0.9);
+  transform: scale(1.025);
 }
 
 .credential-service-grid li::before {
@@ -5445,6 +5503,17 @@ h1 em {
   .credential-service-grid article {
     min-height: 0;
     padding: 25px;
+    transform: none;
+  }
+
+  .credential-service-grid:has(article:is(:hover, :focus-visible)) article:not(:is(:hover, :focus-visible)) {
+    filter: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .credential-service-grid article:is(:hover, :focus-visible) {
+    transform: translateY(-4px);
   }
 
   .credential-roles article,

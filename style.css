@@ -268,33 +268,48 @@ main > section {
 .brand-wordmark-electric > .brand-wordmark-electrons {
   position: absolute;
   z-index: 2;
-  inset: -7px -4px;
+  inset: -9px -7px;
   overflow: hidden;
+  mix-blend-mode: screen;
   pointer-events: none;
+}
+
+.brand-wordmark-electrons::before {
+  position: absolute;
+  top: 48%;
+  left: -42%;
+  width: 42%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(70, 226, 255, 0.4), #ffffff 72%, #ffd158 86%, transparent);
+  box-shadow: 0 0 8px #46e2ff, 0 0 17px rgba(255, 205, 76, 0.8);
+  content: "";
+  transform: rotate(-2deg);
+  animation: brand-wordmark-wave 3.6s ease-in-out infinite;
 }
 
 .brand-wordmark-electrons i {
   position: absolute;
   top: 27%;
   left: -9%;
-  width: 4px;
-  height: 4px;
+  width: 7px;
+  height: 7px;
   color: #55e7ff;
   background: currentColor;
   border-radius: 50%;
   box-shadow:
-    0 0 3px #ffffff,
-    0 0 8px currentColor,
-    0 0 15px currentColor;
-  animation: brand-wordmark-electron 4.2s linear infinite;
+    inset 0 0 0 2px #ffffff,
+    0 0 5px #ffffff,
+    0 0 11px currentColor,
+    0 0 23px currentColor;
+  animation: brand-wordmark-electron 3.3s linear infinite;
 }
 
 .brand-wordmark-electrons i::after {
   position: absolute;
   top: 50%;
-  right: 2px;
-  width: 24px;
-  height: 1px;
+  right: 5px;
+  width: 38px;
+  height: 2px;
   background: linear-gradient(90deg, transparent, currentColor);
   content: "";
   transform: translateY(-50%);
@@ -304,34 +319,59 @@ main > section {
 .brand-wordmark-electrons i:nth-child(2) {
   top: 55%;
   color: #ffd35a;
-  animation-delay: -1.25s;
-  animation-duration: 5.1s;
+  animation-delay: -0.7s;
+  animation-duration: 3.8s;
 }
 
 .brand-wordmark-electrons i:nth-child(3) {
   top: 74%;
-  width: 3px;
-  height: 3px;
-  animation-delay: -2.8s;
-  animation-duration: 4.7s;
+  width: 6px;
+  height: 6px;
+  animation-delay: -1.45s;
+  animation-duration: 3.5s;
 }
 
 .brand-wordmark-electrons i:nth-child(4) {
   top: 40%;
-  width: 3px;
-  height: 3px;
+  width: 6px;
+  height: 6px;
   color: #ffd35a;
-  animation-delay: -3.65s;
-  animation-duration: 6s;
+  animation-delay: -2.15s;
+  animation-duration: 4.1s;
+}
+
+.brand-wordmark-electrons i:nth-child(5) {
+  top: 18%;
+  width: 5px;
+  height: 5px;
+  animation-delay: -2.75s;
+  animation-duration: 3.7s;
+}
+
+.brand-wordmark-electrons i:nth-child(6) {
+  top: 84%;
+  width: 5px;
+  height: 5px;
+  color: #ffd35a;
+  animation-delay: -3.3s;
+  animation-duration: 4.3s;
 }
 
 @keyframes brand-wordmark-electron {
-  0% { left: -9%; opacity: 0; transform: translateY(2px) scale(0.55); }
-  9% { opacity: 0.95; }
-  30% { transform: translateY(-5px) scale(1); }
-  57% { transform: translateY(4px) scale(1.25); }
-  82% { opacity: 0.95; transform: translateY(-3px) scale(0.85); }
-  100% { left: 106%; opacity: 0; transform: translateY(2px) scale(0.55); }
+  0% { left: -9%; opacity: 0; transform: translateY(2px) scale(0.75); }
+  5% { opacity: 1; }
+  30% { transform: translateY(-6px) scale(1); }
+  57% { transform: translateY(5px) scale(1.3); }
+  94% { opacity: 1; transform: translateY(-4px) scale(0.95); }
+  100% { left: 106%; opacity: 0; transform: translateY(2px) scale(0.75); }
+}
+
+@keyframes brand-wordmark-wave {
+  0% { left: -42%; opacity: 0; }
+  12% { opacity: 0.9; }
+  50% { opacity: 1; }
+  88% { opacity: 0.9; }
+  100% { left: 108%; opacity: 0; }
 }
 
 .header-code-rain {

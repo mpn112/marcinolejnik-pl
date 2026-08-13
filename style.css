@@ -3750,15 +3750,22 @@ h1 em {
 }
 
 .measurement-proof {
-  position: absolute;
-  z-index: 5;
-  min-width: 150px;
+  min-width: 0;
   padding: 13px 15px;
   background: rgba(5, 23, 18, 0.86);
   border: 1px solid rgba(185, 242, 39, 0.22);
   border-radius: 13px;
   box-shadow: 0 17px 38px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(12px);
+}
+
+.measurement-proof-row {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 10px;
 }
 
 .measurement-proof small,
@@ -3777,16 +3784,6 @@ h1 em {
   margin-top: 4px;
   color: var(--green);
   font: 700 12px/1.25 "Manrope", sans-serif;
-}
-
-.proof-top {
-  top: 73px;
-  right: -22px;
-}
-
-.proof-bottom {
-  bottom: 72px;
-  left: -25px;
 }
 
 .automation-section {
@@ -6100,10 +6097,6 @@ h1 em {
     50% {
       transform: translateY(195px);
     }
-  }
-
-  .measurement-proof {
-    display: none;
   }
 
   .measurement-matrix {

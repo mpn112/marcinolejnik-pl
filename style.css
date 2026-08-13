@@ -4156,6 +4156,18 @@ h1 em {
   line-height: 1.75;
 }
 
+.credentials-section .credential-promise {
+  margin: 16px 0 0;
+  padding: 15px 18px;
+  color: #27463a;
+  background: linear-gradient(90deg, rgba(185, 242, 39, 0.13), rgba(24, 188, 242, 0.08));
+  border-left: 3px solid var(--green-deep);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.6;
+}
+
 .credential-tags {
   display: flex;
   flex-wrap: wrap;
@@ -4299,6 +4311,51 @@ h1 em {
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(185, 242, 39, 0.4);
   content: "";
+}
+
+.credential-process {
+  margin-top: 16px;
+  padding: 25px 28px;
+  color: #effaf5;
+  background:
+    radial-gradient(circle at 88% 50%, rgba(185, 242, 39, 0.11), transparent 28%),
+    linear-gradient(120deg, #061812, #0a3024);
+  border: 1px solid rgba(42, 208, 245, 0.18);
+  border-radius: 18px;
+  box-shadow: 0 20px 48px rgba(7, 38, 29, 0.14);
+}
+
+.credential-process small {
+  display: block;
+  margin-bottom: 16px;
+  color: #2ad0f5;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.credential-process div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.credential-process span {
+  padding: 9px 12px;
+  color: rgba(244, 255, 249, 0.88);
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.credential-process i {
+  color: var(--green);
+  font-style: normal;
+  text-shadow: 0 0 10px rgba(185, 242, 39, 0.45);
 }
 
 .credential-scope {

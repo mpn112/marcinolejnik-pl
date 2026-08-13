@@ -1313,6 +1313,15 @@ h1 em {
   padding: 115px 0;
 }
 
+/* Krótszy rytm strony: najważniejsze sekcje zachowują oddech bez pustych przebiegów. */
+.measurement-tech-section,
+.pv-pricing-section,
+.electrical-inspections-section,
+.pricing-section,
+.credentials-section {
+  padding-block: 86px;
+}
+
 .section-heading {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -4128,7 +4137,7 @@ h1 em {
 
 .technology-section {
   position: relative;
-  padding-block: 92px;
+  padding-block: 72px;
   overflow: hidden;
   color: #eef8f3;
   background:
@@ -4165,6 +4174,17 @@ h1 em {
 
 .technology-section .section-heading > p {
   opacity: 0.64;
+}
+
+.it-compact-proof {
+  margin: -28px 0 30px;
+  color: rgba(235, 247, 241, 0.64);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.it-compact-proof strong {
+  color: #b9f227;
 }
 
 .it-code-rain {
@@ -4772,7 +4792,7 @@ h1 em {
 
 .inquiry-section {
   position: relative;
-  padding: 112px 0;
+  padding: 88px 0;
   color: var(--white);
   background:
     radial-gradient(circle at 12% 20%, rgba(24, 214, 242, 0.11), transparent 28%),

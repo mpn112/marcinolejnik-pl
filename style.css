@@ -900,11 +900,11 @@ h1 em {
   right: 0;
   bottom: calc(100% + 24px);
   left: 0;
-  display: grid;
-  grid-template-columns: auto 5px auto;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 11px 14px;
+  gap: 8px;
   padding: 14px 20px;
   color: rgba(255, 255, 255, 0.9);
   background: linear-gradient(110deg, rgba(11, 48, 38, 0.94), rgba(20, 61, 46, 0.82));
@@ -914,9 +914,44 @@ h1 em {
   backdrop-filter: blur(10px);
   font: 700 14px/1.25 "Manrope", sans-serif;
   letter-spacing: -0.01em;
+  animation: hero-offer-glow 2.6s ease-in-out infinite;
 }
 
-.hero-offer-banner i {
+.hero-offer-kicker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  color: var(--green);
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hero-offer-kicker b {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1;
+  text-shadow: 0 0 15px rgba(185, 242, 39, 0.8);
+}
+
+.hero-offer-kicker b:first-child {
+  animation: hero-arrow-right 1.15s ease-in-out infinite;
+}
+
+.hero-offer-kicker b:last-child {
+  animation: hero-arrow-left 1.15s ease-in-out infinite;
+}
+
+.hero-offer-services {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hero-offer-services i {
   width: 5px;
   height: 5px;
   background: var(--green);
@@ -924,11 +959,34 @@ h1 em {
   box-shadow: 0 0 12px rgba(185, 242, 39, 0.8);
 }
 
-.hero-offer-banner strong {
-  grid-column: 1 / -1;
-  color: var(--green);
-  font-size: 17px;
+.hero-offer-insurance {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 13px;
   text-align: center;
+}
+
+@keyframes hero-offer-glow {
+  0%,
+  100% {
+    border-color: rgba(185, 242, 39, 0.35);
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.25), 0 0 0 rgba(185, 242, 39, 0);
+  }
+  50% {
+    border-color: rgba(185, 242, 39, 0.82);
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.25), 0 0 28px rgba(185, 242, 39, 0.25);
+  }
+}
+
+@keyframes hero-arrow-right {
+  0%,
+  100% { transform: translateX(-3px); }
+  50% { transform: translateX(4px); }
+}
+
+@keyframes hero-arrow-left {
+  0%,
+  100% { transform: translateX(3px); }
+  50% { transform: translateX(-4px); }
 }
 
 .dashboard-head {
@@ -5556,6 +5614,11 @@ h1 em {
   .hero-offer-banner {
     position: static;
     margin: 0 0 20px;
+  }
+
+  .hero-offer-kicker {
+    gap: 9px;
+    font-size: 16px;
   }
 
   .service-grid {

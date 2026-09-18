@@ -161,6 +161,39 @@ privacyDialog?.addEventListener("click", (event) => {
   if (event.target === privacyDialog) privacyDialog.close();
 });
 
+const phoneConversionId = "AW-18390321251/KnEGCOn95vscEOOQmMFE";
+
+function reportPhoneClickConversion(url) {
+  let navigationStarted = false;
+  const continueToPhone = () => {
+    if (navigationStarted) return;
+    navigationStarted = true;
+    window.location.href = url;
+  };
+
+  if (typeof window.gtag !== "function") {
+    continueToPhone();
+    return;
+  }
+
+  window.gtag("event", "conversion", {
+    send_to: phoneConversionId,
+    value: 1.0,
+    currency: "PLN",
+    event_callback: continueToPhone,
+    event_timeout: 800,
+  });
+
+  window.setTimeout(continueToPhone, 900);
+}
+
+document.querySelectorAll('a[href^="tel:"]').forEach((phoneLink) => {
+  phoneLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    reportPhoneClickConversion(phoneLink.href);
+  });
+});
+
 const contactForm = document.querySelector("[data-contact-form]");
 const contactSubmitButton = contactForm?.querySelector("[data-form-submit]");
 const contactFormStatus = contactForm?.querySelector("[data-form-status]");

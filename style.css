@@ -545,11 +545,83 @@ main > section {
   opacity: 1;
 }
 
+.main-nav .nav-audit {
+  isolation: isolate;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px 9px 25px;
+  color: #07120f;
+  background: linear-gradient(105deg, #b9f227, #d8ff67 48%, #b9f227);
+  border: 1px solid rgba(216, 255, 103, 0.82);
+  border-radius: 100px;
+  font-size: 13px;
+  text-shadow: none;
+  white-space: nowrap;
+  box-shadow: 0 0 0 0 rgba(185, 242, 39, 0.42), 0 0 22px rgba(185, 242, 39, 0.2);
+  animation: nav-audit-pulse 2.3s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.main-nav .nav-audit::before {
+  position: absolute;
+  z-index: 2;
+  left: 10px;
+  width: 7px;
+  height: 7px;
+  background: #07120f;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(7, 18, 15, 0.13);
+  content: "";
+  animation: nav-audit-dot 1.15s ease-in-out infinite;
+}
+
+.main-nav .nav-audit::after {
+  position: absolute;
+  z-index: 1;
+  inset: -35% auto -35% -38%;
+  width: 28%;
+  height: auto;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), transparent);
+  border-radius: 0;
+  box-shadow: none;
+  content: "";
+  opacity: 0;
+  transform: skewX(-18deg);
+  animation: nav-audit-shine 3.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.main-nav .nav-audit:hover,
+.main-nav .nav-audit:focus-visible {
+  color: #07120f;
+  text-shadow: none;
+  transform: translateY(-1px);
+}
+
+@keyframes nav-audit-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(185, 242, 39, 0.36), 0 0 18px rgba(185, 242, 39, 0.18); }
+  50% { box-shadow: 0 0 0 5px rgba(185, 242, 39, 0), 0 0 34px rgba(185, 242, 39, 0.48); }
+}
+
+@keyframes nav-audit-dot {
+  0%, 100% { opacity: 0.45; transform: scale(0.78); }
+  50% { opacity: 1; transform: scale(1.18); }
+}
+
+@keyframes nav-audit-shine {
+  0%, 58% { left: -38%; opacity: 0; }
+  66% { opacity: 0.85; }
+  82%, 100% { left: 112%; opacity: 0; }
+}
+
 .main-nav .nav-phone {
   padding: 11px 17px;
   color: var(--dark);
   background: var(--green);
   border-radius: 100px;
+  white-space: nowrap;
 }
 
 .main-nav .nav-email {
@@ -638,7 +710,7 @@ main > section {
   }
 }
 
-@media (min-width: 901px) and (max-width: 1120px) {
+@media (min-width: 901px) and (max-width: 1320px) {
   .main-nav .nav-email {
     display: none;
   }

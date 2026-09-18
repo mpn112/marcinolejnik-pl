@@ -561,8 +561,8 @@ main > section {
   white-space: nowrap;
   box-shadow: 0 0 0 0 rgba(185, 242, 39, 0.42), 0 0 22px rgba(185, 242, 39, 0.2);
   animation:
-    nav-audit-arrival 1.7s cubic-bezier(0.2, 0.72, 0.22, 1) 0.15s both,
-    nav-audit-pulse 2.3s ease-in-out 1.9s infinite;
+    nav-audit-arrival 5.2s cubic-bezier(0.18, 0.72, 0.2, 1) 0.35s both,
+    nav-audit-pulse 2.3s ease-in-out 5.6s infinite;
   overflow: hidden;
   will-change: transform, opacity, box-shadow;
 }
@@ -600,13 +600,18 @@ main > section {
 }
 
 @keyframes nav-audit-arrival {
-  0% { opacity: 0; transform: translate(12vw, 46vh) rotate(-900deg) scale(0.14); }
-  22% { opacity: 1; transform: translate(-11vw, 35vh) rotate(-690deg) scale(0.42); }
-  46% { transform: translate(-17vw, 19vh) rotate(-450deg) scale(0.66); }
-  68% { transform: translate(8vw, 10vh) rotate(-245deg) scale(0.86); }
-  84% { transform: translate(-22px, 14px) rotate(-58deg) scale(1.08); }
-  93% { transform: translate(7px, -3px) rotate(12deg) scale(0.98); }
-  100% { opacity: 1; transform: translate(0, 0) rotate(0) scale(1); }
+  0% { opacity: 0; transform: translate(12vw, 46vh) rotate(-1440deg) scale(0.14); filter: brightness(1.8); }
+  8% { opacity: 1; transform: translate(-14vw, 38vh) rotate(-1260deg) scale(0.28); }
+  18% { transform: translate(-20vw, 25vh) rotate(-1080deg) scale(0.4); }
+  29% { transform: translate(11vw, 31vh) rotate(-900deg) scale(0.5); }
+  40% { transform: translate(14vw, 17vh) rotate(-720deg) scale(0.61); }
+  51% { transform: translate(-11vw, 20vh) rotate(-540deg) scale(0.7); }
+  62% { transform: translate(-8vw, 9vh) rotate(-360deg) scale(0.79); }
+  73% { transform: translate(6vw, 12vh) rotate(-220deg) scale(0.88); }
+  83% { transform: translate(3vw, 4vh) rotate(-115deg) scale(0.96); }
+  91% { transform: translate(-24px, 15px) rotate(-42deg) scale(1.08); }
+  96% { transform: translate(8px, -4px) rotate(12deg) scale(0.98); }
+  100% { opacity: 1; transform: translate(0, 0) rotate(0) scale(1); filter: brightness(1); }
 }
 
 @keyframes nav-audit-shine {

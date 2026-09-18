@@ -114,9 +114,18 @@ function saveAnalyticsConsent(value) {
 }
 
 function applyAnalyticsConsent(value) {
+  const granted = value === "granted";
+
+  window.gtag?.("consent", "update", {
+    ad_storage: granted ? "granted" : "denied",
+    analytics_storage: granted ? "granted" : "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+  });
+
   window.clarity?.("consentv2", {
     ad_Storage: "denied",
-    analytics_Storage: value === "granted" ? "granted" : "denied",
+    analytics_Storage: granted ? "granted" : "denied",
   });
 }
 

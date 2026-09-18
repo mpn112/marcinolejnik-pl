@@ -36,6 +36,26 @@
     <link rel="canonical" href="https://smartpomiary.pl/" />
     <link rel="stylesheet" href="style.css?v=20260915-2" />
     <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+
+      var storedMeasurementConsent = null;
+      try {
+        storedMeasurementConsent = localStorage.getItem("smartpomiary-analytics-consent");
+      } catch (error) {}
+
+      gtag("consent", "default", {
+        ad_storage: storedMeasurementConsent === "granted" ? "granted" : "denied",
+        analytics_storage: storedMeasurementConsent === "granted" ? "granted" : "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        wait_for_update: 500,
+      });
+      gtag("js", new Date());
+      gtag("config", "AW-18390321251");
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18390321251"></script>
+    <script>
       (function (c, l, a, r, i, t, y) {
         c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
 
@@ -1281,10 +1301,11 @@
       <div class="consent-copy">
         <span class="consent-icon" aria-hidden="true">01</span>
         <div>
-          <h2 id="consent-title">Czy zgadzasz się na analityczne pliki cookies?</h2>
+          <h2 id="consent-title">Czy zgadzasz się na pomiar działania strony?</h2>
           <p id="consent-description">
-            Opcjonalne pliki cookies Microsoft Clarity pomagają mi zrozumieć, jak działa strona,
-            i ją ulepszać. Możesz je zaakceptować albo pozostać przy plikach niezbędnych.
+            Opcjonalne pliki cookies Microsoft Clarity i Google Ads pomagają mi ulepszać stronę
+            oraz sprawdzać, czy reklama prowadzi do kontaktu. Możesz je zaakceptować albo pozostać
+            przy plikach niezbędnych.
           </p>
           <button type="button" class="consent-policy-link" data-open-privacy>
             Szczegóły i polityka prywatności
@@ -1322,6 +1343,14 @@
           zgody może używać cookies <code>_clck</code> i <code>_clsk</code>, aby łączyć
           odsłony w sesje. Nie udzielam zgody na wykorzystanie danych reklamowych.
         </p>
+        <h3>Google Ads — pomiar konwersji</h3>
+        <p>
+          Tag Google Ads pomaga ustalić, czy wejście z reklamy zakończyło się kliknięciem numeru
+          telefonu albo wysłaniem formularza. Domyślnie zgoda na przechowywanie danych reklamowych
+          i analitycznych jest wyłączona. Po akceptacji może zostać zapisana informacja potrzebna
+          do przypisania kontaktu do reklamy. Personalizacja reklam i przekazywanie danych
+          użytkownika pozostają wyłączone.
+        </p>
         <h3>Formularz kontaktowy</h3>
         <p>
           Dane wpisane w formularzu są wykorzystywane wyłącznie do udzielenia odpowiedzi na
@@ -1335,12 +1364,16 @@
           „Ustawienia analityki” w stopce. Więcej informacji zawiera
           <a href="https://privacy.microsoft.com/pl-pl/privacystatement" target="_blank" rel="noreferrer">
             oświadczenie Microsoft o ochronie prywatności
+          </a>
+          oraz
+          <a href="https://policies.google.com/privacy?hl=pl" target="_blank" rel="noreferrer">
+            Polityka prywatności Google
           </a>.
         </p>
       </div>
     </dialog>
 
 
-    <script src="script.js?v=20260813-7"></script>
+    <script src="script.js?v=20260918-1"></script>
   </body>
 </html>

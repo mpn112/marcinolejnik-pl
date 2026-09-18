@@ -197,6 +197,25 @@ document.querySelectorAll('a[href^="tel:"]').forEach((phoneLink) => {
 const contactForm = document.querySelector("[data-contact-form]");
 const contactSubmitButton = contactForm?.querySelector("[data-form-submit]");
 const contactFormStatus = contactForm?.querySelector("[data-form-status]");
+const auditFileInput = contactForm?.querySelector("[data-file-input]");
+const auditFileStatus = contactForm?.querySelector("[data-file-status]");
+
+auditFileInput?.addEventListener("change", () => {
+  const files = Array.from(auditFileInput.files || []);
+  const totalSize = files.reduce((sum, file) => sum + file.size, 0);
+  const maximumSize = 10 * 1024 * 1024;
+
+  if (totalSize > maximumSize) {
+    auditFileInput.setCustomValidity("Łączny rozmiar załączników nie może przekraczać 10 MB.");
+    auditFileStatus.textContent = "Załączniki są za duże — wybierz pliki o łącznym rozmiarze do 10 MB.";
+    return;
+  }
+
+  auditFileInput.setCustomValidity("");
+  auditFileStatus.textContent = files.length
+    ? `Wybrano ${files.length} ${files.length === 1 ? "plik" : "pliki"} (${(totalSize / 1024 / 1024).toFixed(1)} MB)`
+    : "Zdjęcia instalacji, zrzuty błędów, wykresy produkcji lub PDF — maks. 10 MB łącznie";
+});
 
 function setContactFormStatus(message, type = "") {
   if (!contactFormStatus) return;

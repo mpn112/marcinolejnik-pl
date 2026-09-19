@@ -194,6 +194,30 @@ document.querySelectorAll('a[href^="tel:"]').forEach((phoneLink) => {
   });
 });
 
+const webIntro = document.querySelector("[data-web-intro]");
+const webIntroClose = document.querySelector("[data-web-intro-close]");
+const webIntroLink = document.querySelector("[data-web-intro-link]");
+let webIntroTimer;
+
+function hideWebIntro() {
+  if (!webIntro || webIntro.classList.contains("is-leaving")) return;
+  window.clearTimeout(webIntroTimer);
+  webIntro.classList.add("is-leaving");
+  window.setTimeout(() => webIntro.setAttribute("hidden", ""), 900);
+}
+
+if (webIntro) {
+  const introUrlParams = new URLSearchParams(window.location.search);
+  if (introUrlParams.get("wyslano") === "1") {
+    webIntro.setAttribute("hidden", "");
+  } else {
+    webIntroTimer = window.setTimeout(hideWebIntro, 5000);
+  }
+}
+
+webIntroClose?.addEventListener("click", hideWebIntro);
+webIntroLink?.addEventListener("click", hideWebIntro);
+
 const contactForm = document.querySelector("[data-contact-form]");
 const contactSubmitButton = contactForm?.querySelector("[data-form-submit]");
 const contactFormStatus = contactForm?.querySelector("[data-form-status]");

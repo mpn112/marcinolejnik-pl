@@ -4945,7 +4945,7 @@ h1 em {
   background: linear-gradient(90deg, #25c9f0, var(--green));
   box-shadow: 0 0 18px rgba(185, 242, 39, 0.6);
   transform-origin: left;
-  animation: web-intro-timer 5s linear both;
+  animation: web-intro-timer 3s linear both;
 }
 
 .web-intro.is-leaving {

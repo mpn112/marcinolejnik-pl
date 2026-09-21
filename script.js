@@ -211,7 +211,7 @@ if (webIntro) {
   if (introUrlParams.get("wyslano") === "1") {
     webIntro.setAttribute("hidden", "");
   } else {
-    webIntroTimer = window.setTimeout(hideWebIntro, 5000);
+    webIntroTimer = window.setTimeout(hideWebIntro, 3000);
   }
 }
 

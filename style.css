@@ -3559,6 +3559,19 @@ h1 em {
   border-color: rgba(39, 204, 245, 0.38);
 }
 
+.certificate-card--deye {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.28fr);
+  background:
+    radial-gradient(circle at 18% 30%, rgba(32, 116, 238, 0.14), transparent 42%),
+    rgba(255, 255, 255, 0.052);
+  border-color: rgba(60, 136, 246, 0.24);
+}
+
+.certificate-card--deye:hover {
+  border-color: rgba(69, 149, 255, 0.52);
+}
+
 .certificate-preview {
   position: relative;
   display: block;
@@ -3567,6 +3580,10 @@ h1 em {
   background: #fff;
   border-radius: 9px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28), 0 0 22px rgba(30, 197, 238, 0.08);
+}
+
+.certificate-preview--landscape {
+  aspect-ratio: 1400 / 1010;
 }
 
 .certificate-preview img {
@@ -3595,6 +3612,11 @@ h1 em {
 .certificate-copy span,
 .certificate-copy b {
   display: block;
+}
+
+.credential-manufacturer-note {
+  padding-left: 18px;
+  border-left: 3px solid #2474ee;
 }
 
 .certificate-copy small {
@@ -6916,6 +6938,10 @@ h1 em {
   .certificate-card {
     grid-template-columns: 104px 1fr;
     gap: 16px;
+  }
+
+  .certificate-card--deye {
+    grid-template-columns: 1fr;
   }
 
   .certificate-copy strong {
